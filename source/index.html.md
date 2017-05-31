@@ -14,6 +14,7 @@ toc_footers:
 includes:
   - network
   - user
+  - fixed_interest  
   - errors
 
 search: true
