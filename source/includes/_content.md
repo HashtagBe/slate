@@ -112,33 +112,7 @@ id * | The id of the user to retrieve
 
 ## Create a Content
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> If user is created successfully
+> If content is created successfully
 
 ```json
 {
@@ -190,7 +164,7 @@ Parameter |  Rules
 *widget_type_id* | Presence
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Available widget type id please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a>
 </aside>
 
 

@@ -71,33 +71,6 @@ Parameter | Description
 id * | The id of the fixed_interest to retrieve
 
 ## Create a Fixed_interest
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
 > If fixed_interest is created successfully
 
 ```json
@@ -128,7 +101,6 @@ let kittens = api.kittens.get();
 }
 ```
 
-
 This endpoint create a fixed_interest
 
 ### HTTP Request
@@ -141,6 +113,7 @@ Parameter | Default | Description
 --------- | ------- | -----------
 name * |  | string
 network |  | create fixed_interest for specific network
+icon|  | icon image
 
 ### Validation Rules
 
@@ -148,41 +121,12 @@ Parameter |  Rules
 --------- |  -----------
 *name* | Presence
  | Uniqueness in the scope of language and network
- *network* | Exist network name
+*network* | Exist network name
+*icon* | Less than 1 megabyte
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+## Approve a Fixed_interest
 
-## Update a Fixed_interest
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> If network is updated successfully
+> If a fixed_interest is approved successfully by network manager
 
 ```json
 {
@@ -190,18 +134,75 @@ let kittens = api.kittens.get();
 }
 ```
 
-> Other failed cases please refer <a href= "#create-a-network">Create a Network API</a>
-
-This endpoint update a user
+This endpoint used to approve suggested fixed_interest
 
 ### HTTP Request
 
-`PATCH hostname/api/v4/fixed_interests/<id>`
-`PUT hostname/api/v4/fixed_interests/<id>`
+`PUT hostname/api/v4/fixed_interests/<id>/approve`
 
 ### Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
 id * |  | string
-name * |  | string
+network_id * |  | string
+
+<aside class="success">
+The operator must be network manager
+</aside>
+
+
+## Reject a Fixed_interest
+
+> If a fixed_interest is rejected successfully by network manager
+
+```json
+{
+  "status": "success"
+}
+```
+
+This endpoint used to reject suggested fixed_interest
+
+### HTTP Request
+
+`PUT hostname/api/v4/fixed_interests/<id>/reject`
+
+### Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+id * |  | string
+network_id * |  | string
+
+<aside class="success">
+The operator must be network manager
+</aside>
+
+
+## Hide a Fixed_interest
+
+> If network manager hide a fixed_interest successfully
+
+```json
+{
+  "status": "success"
+}
+```
+
+Fixed_interest can't be deleted, network manager can hide it by this endpoint
+
+### HTTP Request
+
+`PUT hostname/api/v4/fixed_interests/<id>/hide`
+
+### Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+id * |  | string
+network_id * |  | string
+
+<aside class="success">
+The operator must be network manager
+</aside>
