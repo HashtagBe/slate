@@ -69,6 +69,9 @@ This endpoint retrieves all widget types that available in #be.
 
 `GET hostname/api/v4/widget_types`
 
+<aside class="success">
+Note: This is public API, can be accessed without token.
+</aside>
 
 
 

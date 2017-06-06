@@ -206,11 +206,6 @@ Parameter |  Rules
 *image* | Mush be image(jpg jpeg gif png)
  | Less than 1 megabyte
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-
 ## Delete a User
 
 ```ruby
