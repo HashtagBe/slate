@@ -52,7 +52,7 @@ This endpoint retrieves all users.
 
 ### HTTP Request
 
-`GET hostname/api/v4/users`
+`GET hostname/api/v4/users.json`
 
 ### Query Parameters
 
@@ -60,10 +60,6 @@ Parameter | Default | Description
 --------- | ------- | -----------
 offset | 0 |
 limit| 20 | valid range is 1..150
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
 ## Get a Specific User
 
@@ -94,13 +90,11 @@ Remember — a happy kitten is an authenticated kitten!
 }
 ```
 
-This endpoint retrieves a specific network.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint retrieves a specific user.
 
 ### HTTP Request
 
-`GET hostname/api/v4/users/<id>`
+`GET hostname/api/v4/users/<id>.json`
 
 ### URL Parameters
 
@@ -108,35 +102,7 @@ Parameter | Description
 --------- | -----------
 id * | The id of the user to retrieve
 
-
-
 ## Create a User
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
 
 > If user is created successfully
 
@@ -173,7 +139,7 @@ This endpoint create a user
 
 ### HTTP Request
 
-`POST hostname/api/v4/users`
+`POST hostname/api/v4/users.json`
 
 ### Parameters
 
@@ -205,11 +171,6 @@ Parameter |  Rules
  | allow_blank
 *image* | Mush be image(jpg jpeg gif png)
  | Less than 1 megabyte
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
 
 ## Delete a User
 

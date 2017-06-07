@@ -1,33 +1,6 @@
 # Networks
 
 ## Get All Networks
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
 > The above command returns JSON structured like this:
 
 ```json
@@ -90,7 +63,7 @@ This endpoint retrieves all networks.
 
 ### HTTP Request
 
-`GET hostname/api/v4/networks`
+`GET hostname/api/v4/networks.json`
 
 ### Query Parameters
 
@@ -99,37 +72,7 @@ Parameter | Default | Description
 offset | 0 |
 limit| 20 | valid range is 1..150
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
 ## Get a Specific Network
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
 
 > The above command returns JSON structured like this:
 
@@ -165,11 +108,9 @@ let max = api.kittens.get(2);
 
 This endpoint retrieves a specific network.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
 ### HTTP Request
 
-`GET hostname/api/v4/networks/<id>`
+`GET hostname/api/v4/networks/<id>.json`
 
 ### URL Parameters
 
@@ -177,36 +118,7 @@ Parameter | Description
 --------- | -----------
 id * | The id of the network to retrieve
 
-
-
 ## Create a Network
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
 > If network is created successfully
 
 ```json
@@ -250,7 +162,7 @@ This endpoint create a network
 
 ### HTTP Request
 
-`POST hostname/api/v4/networks`
+`POST hostname/api/v4/networks.json`
 
 ### Parameters
 
@@ -294,38 +206,7 @@ Parameter |  Rules
 *color* | Mush be valid color code
   | allow_blank
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-
 ## Delete a Network
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
 
 > If network is deleted successfully
 
@@ -356,39 +237,8 @@ Parameter | Default | Description
 --------- | ------- | -----------
 id * |  | string
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-
 
 ## Update a Network
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
 
 > If network is updated successfully
 

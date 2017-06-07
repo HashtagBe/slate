@@ -65,62 +65,110 @@ limit| 20 | valid range is 1..150
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific User
+## Get a Specific Content
 
-> The API returns JSON structured like this:
+> Set detail to true and get full version
 
 ```json
 {
   "status": "success",
   "data": {
-    "id": 980,
-    "email": "abc@hashtag.be",
-    "country": "",
-    "role": "staff",
-    "first_name": "abc",
-    "last_name": "abc",
-    "gender": "male",
-    "image": {
-      "url": "https://d19sjrth63kcaj.cloudfront.net/production/assets/logo.png"
-    },
-    "birthday": "2000-01-31",
+    "id": 25858,
+    "title": "这篇不错",
+    "subtitle": null,
+    "authors": null,
+    "abstract": null,
+    "state": "not_saved",
+    "source": "manual_input",
     "content_languages": [
-      "en",
-      "it",
       "zh-CN"
     ],
-    "last_login_at": "2017-05-23T08:07:57.000Z"
+    "url": null,
+    "video_url": null,
+    "flipsnack_url": null,
+    "website_url": null,
+    "free_tags": null,
+    "event_end": null,
+    "event_start": null,
+    "event_datetime": null,
+    "publish_datetime": null,
+    "online_datetime": null,
+    "venue": null,
+    "price": null,
+    "created_at": "2017-06-05T08:48:29.000Z",
+    "updated_at": "2017-06-05T08:48:29.000Z",
+    "organizer": null,
+    "user_id": null,
+    "network_id": null,
+    "network_source_id": null,
+    "timeliness": "day",
+    "image_width": null,
+    "image_height": null,
+    "coupon_code": null,
+    "creators_comment": null,
+    "reward_url": null,
+    "expires_at": "2017-06-06T08:48:29.000Z",
+    "nclaimed": 0,
+    "nstock": null,
+    "targeted_user_ids": null,
+    "targeted_roles": null,
+    "is_challenge_reward": true,
+    "attachment_content_type": null,
+    "attachment_file_size_bytes": null,
+    "widget_type": "article"
   }
 }
 ```
 
-This endpoint retrieves a specific network.
+> Set detail to false and get simplified version
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+```json
+{
+  "status": "success",
+  "data": {
+    "id": 25858,
+    "title": "这篇不错",
+    "subtitle": null,
+    "authors": null,
+    "abstract": null,
+    "state": "not_saved",
+    "source": "manual_input",
+    "url": null,
+    "widget_type": "article"
+  }
+}
+```
+
+This endpoint retrieves a specific content.
+
+<aside class="notice">We provide two versions of response, simplified version is the default one, if you need all attributes of content, please set <code>detail</code> as true</aside>
 
 ### HTTP Request
 
-`GET hostname/api/v4/users/<id>`
+`GET hostname/api/v4/contents/<id>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 id * | The id of the user to retrieve
-
+detail | Default value: false
 
 
 ## Create a Content
 
-> If content is created successfully
+> If content is created successfully, response content id back
 
 ```json
 {
-  "status": "success"
+  "status": "success",
+  "data": {
+    "id": 1
+  }
 }
 ```
 
-> else if email | first_name | last_name | password is missing
+> else if parameter is invalid
 
 ```json
 {
@@ -128,20 +176,6 @@ id * | The id of the user to retrieve
   "msg": "param is missing or the value is empty: XXX"
 }
 ```
-
-> else if email has been taken
-
-```json
-{
-  "status": "fail",
-  "msg": {
-    "email": [
-      "has already been taken"
-    ]
-  }
-}
-```
-
 
 This endpoint create a content
 
@@ -155,48 +189,29 @@ Parameter | Default | Description
 --------- | ------- | -----------
 title * |  | string
 widget_type_id * |  | integer
-
+abstract |  | text
+timeliness |  | text
+targeted_roles|  | array
+targeted_user_ids|  | array
+image|  | file
+attachment|  | file
+content_languages|  | array
 ### Validation Rules
 
 Parameter |  Rules
 --------- |  -----------
 *title* | Presence
 *widget_type_id* | Presence
+*attachment* | Less than 5 megabytes
 
 <aside class="success">
 Available widget type id please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a>
 </aside>
 
 
-## Delete a User
+## Delete a Content
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> If user is deleted successfully
+> If content is deleted successfully
 
 ```json
 {
@@ -204,20 +219,20 @@ let kittens = api.kittens.get();
 }
 ```
 
-> else if user is not exist with given id
+> else if content is not exist with given id
 
 ```json
 {
   "status": "fail",
-  "msg": "user is not exist"
+  "msg": "content is not exist"
 }
 ```
 
-This endpoint delete a user
+This endpoint delete a content
 
 ### HTTP Request
 
-`DELETE hostname/api/v4/users/<id>`
+`DELETE hostname/api/v4/contents/<id>`
 
 ### Parameters
 
@@ -225,11 +240,54 @@ Parameter | Default | Description
 --------- | ------- | -----------
 id * |  | string
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
 
+## Launch content to a specific network
+
+> If network is updated successfully
+
+```json
+{
+  "status": "success"
+}
+```
+
+Content creator can use this endpoint to put a content to a specific network.
+
+### HTTP Request
+
+`GET hostname/api/v4/contents/<id>/launch_to_network.json`
+
+### Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+id * |  | string
+network_id * |  | string
+
+
+## Pick content to a specific network
+
+> If network is updated successfully
+
+```json
+{
+  "status": "success"
+}
+```
+
+This endpoint is for network manager to pick contents to specific network.
+
+### HTTP Request
+
+`GET hostname/api/v4/contents/<id>/pick.json`
+
+### Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+id * |  | string
+network_id * |  | string
 
 ## Update a User
 
