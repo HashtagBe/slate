@@ -28,7 +28,7 @@ This endpoint retrieves all fixed_interests.
 
 ### HTTP Request
 
-`GET hostname/api/v4/fixed_interests`
+`GET hostname/api/v4/fixed_interests.json`
 
 ### Query Parameters
 
@@ -62,7 +62,7 @@ undistributed| false | get all fixed_interests without network information
 This endpoint retrieves a specific fixed_interest.
 ### HTTP Request
 
-`GET hostname/api/v4/fixed_interests/<id>`
+`GET hostname/api/v4/fixed_interests/<id>.json`
 
 ### URL Parameters
 
@@ -105,7 +105,7 @@ This endpoint create a fixed_interest
 
 ### HTTP Request
 
-`POST hostname/api/v4/fixed_interests`
+`POST hostname/api/v4/fixed_interests.json`
 
 ### Parameters
 
@@ -138,7 +138,7 @@ This endpoint used to approve suggested fixed_interest
 
 ### HTTP Request
 
-`PUT hostname/api/v4/fixed_interests/<id>/approve`
+`PUT hostname/api/v4/fixed_interests/<id>/approve.json`
 
 ### Parameters
 
@@ -166,7 +166,7 @@ This endpoint used to reject suggested fixed_interest
 
 ### HTTP Request
 
-`PUT hostname/api/v4/fixed_interests/<id>/reject`
+`PUT hostname/api/v4/fixed_interests/<id>/reject.json`
 
 ### Parameters
 
@@ -194,7 +194,7 @@ Fixed_interest can't be deleted, network manager can hide it by this endpoint
 
 ### HTTP Request
 
-`PUT hostname/api/v4/fixed_interests/<id>/hide`
+`PUT hostname/api/v4/fixed_interests/<id>/hide.json`
 
 ### Parameters
 
