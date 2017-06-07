@@ -1,4 +1,4 @@
-# Fixed interest
+# Fixed interests
 <aside class="warning">Fixed interest can't be deleted</aside>
 ## Get Fixed_interests List
 > The API returns JSON structured like this:

@@ -174,32 +174,6 @@ Parameter |  Rules
 
 ## Delete a User
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
 > If user is deleted successfully
 
 ```json
@@ -229,41 +203,9 @@ Parameter | Default | Description
 --------- | ------- | -----------
 id * |  | string
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-
-
 ## Update a User
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> If network is updated successfully
+> If user is updated successfully
 
 ```json
 {
@@ -271,13 +213,14 @@ let kittens = api.kittens.get();
 }
 ```
 
-> Other failed cases please refer <a href= "#create-a-network">Create a Network API</a>
+> Other failed cases please refer <a href= "#create-a-user">Create a User API</a>
 
 This endpoint update a user
 
 ### HTTP Request
 
 `PATCH hostname/api/v4/users/<id>`
+
 `PUT hostname/api/v4/users/<id>`
 
 ### Parameters

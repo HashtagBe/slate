@@ -2,12 +2,12 @@
 title: API Reference
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='https://network.hashtag.be'>Contact us</a>
 
 includes:
   - network
   - user
+  - membership  
   - fixed_interest
   - content
   - widget_type      
@@ -71,3 +71,7 @@ Parameter | Default | Description
 --------- | ------- | -----------
 email* |  |
 password*|  |
+
+<aside class="success">
+Note: This is public API, can be accessed without token.
+</aside>

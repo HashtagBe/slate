@@ -5,54 +5,63 @@
 
 ```json
 {
-"status": "success",
+  "status": "success",
   "data": [
     {
-      "id": 1,
-      "email": "admin1@hashtag.be",
-      "country": null,
-      "role": "admin",
-      "first_name": "Admin",
-      "last_name": "Istrator",
-      "gender": null,
-      "image": {
-        "url":
-        "https://d19sjrth63kcaj.cloudfront.net/production/assets/logo.png"
-      },
-      "birthday": null,
+      "id": XXX,
+      "title": "Bing",
+      "subtitle": null,
+      "authors": "",
+      "abstract": "Bing helps you turn information into action, making it faster and easier to go from searching to doing.",
+      "state": "ready",
+      "source": "manual_input",
       "content_languages": [
-        "en",
-        "it"
+        "en"
       ],
-      "last_login_at": "2017-01-26T09:00:13.000Z"
+      "url": "http://www.bing.com/",
+      "video_url": null,
+      "flipsnack_url": null,
+      "website_url": "http://www.bing.com",
+      "free_tags": null,
+      "event_end": null,
+      "event_start": null,
+      "event_datetime": null,
+      "publish_datetime": null,
+      "online_datetime": null,
+      "venue": null,
+      "price": null,
+      "created_at": "2017-06-07T09:10:29.000Z",
+      "updated_at": "2017-06-07T09:10:29.000Z",
+      "organizer": null,
+      "user_id": 1,
+      "network_id": null,
+      "network_source_id": null,
+      "timeliness": "month",
+      "image_width": null,
+      "image_height": null,
+      "coupon_code": null,
+      "creators_comment": null,
+      "reward_url": null,
+      "expires_at": "2017-07-07T09:10:29.000Z",
+      "nclaimed": 0,
+      "nstock": null,
+      "targeted_user_ids": null,
+      "targeted_roles": null,
+      "is_challenge_reward": true,
+      "attachment_content_type": null,
+      "attachment_file_size_bytes": null,
+      "widget_type": "article"
     },
-    {
-      "id": 2,
-      "email": "chris@hashtag.be",
-      "country": "US",
-      "role": "user",
-      "first_name": "Chris",
-      "last_name": "Gibson",
-      "gender": "male",
-      "image": {
-        "url":
-        "https://d19sjrth63kcaj.cloudfront.net/production/assets/logo.png"
-      },
-      "birthday": null,
-      "content_languages": [
-        "en",
-        "it"
-      ],
-      "last_login_at": "2016-11-15T09:44:41.000Z"
-    }]
+    {...}
+  ]
 }
 ```
 
-This endpoint retrieves all users.
+This endpoint retrieves all contents.
 
 ### HTTP Request
 
-`GET hostname/api/v4/users`
+`GET hostname/api/v4/contents.json`
 
 ### Query Parameters
 
@@ -61,9 +70,6 @@ Parameter | Default | Description
 offset | 0 |
 limit| 20 | valid range is 1..150
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
 ## Get a Specific Content
 
@@ -73,7 +79,7 @@ Remember — a happy kitten is an authenticated kitten!
 {
   "status": "success",
   "data": {
-    "id": 25858,
+    "id": XXX,
     "title": "这篇不错",
     "subtitle": null,
     "authors": null,
@@ -145,7 +151,7 @@ This endpoint retrieves a specific content.
 
 ### HTTP Request
 
-`GET hostname/api/v4/contents/<id>`
+`GET hostname/api/v4/contents/<id>.json`
 
 ### URL Parameters
 
@@ -154,6 +160,78 @@ Parameter | Description
 id * | The id of the user to retrieve
 detail | Default value: false
 
+## Extract Content
+
+> extract result show as below
+
+```json
+{
+  "status": "success",
+  "data": {
+    "id": null,
+    "title": "Bing",
+    "subtitle": null,
+    "authors": "",
+    "abstract": "Bing helps you turn information into action, making it faster and easier to go from searching to doing.",
+    "state": "ready",
+    "source": "manual_input",
+    "content_languages": [
+      "en"
+    ],
+    "url": "http://www.bing.com/",
+    "video_url": null,
+    "flipsnack_url": null,
+    "website_url": "http://www.bing.com",
+    "free_tags": null,
+    "event_end": null,
+    "event_start": null,
+    "event_datetime": null,
+    "publish_datetime": null,
+    "online_datetime": null,
+    "venue": null,
+    "price": null,
+    "created_at": null,
+    "updated_at": null,
+    "organizer": null,
+    "user_id": null,
+    "network_id": null,
+    "network_source_id": null,
+    "timeliness": "month",
+    "image_width": null,
+    "image_height": null,
+    "coupon_code": null,
+    "creators_comment": null,
+    "reward_url": null,
+    "expires_at": null,
+    "nclaimed": 0,
+    "nstock": null,
+    "targeted_user_ids": null,
+    "targeted_roles": null,
+    "is_challenge_reward": true,
+    "attachment_content_type": null,
+    "attachment_file_size_bytes": null,
+    "widget_type": "web"
+  }
+}
+```
+
+This endpoint extract content with url provided
+
+### HTTP Request
+
+`GET hostname/api/v4/extract.json`
+
+### Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+url * |  | extract url
+
+
+### Validation Rules
+Parameter |  Rules
+--------- |  -----------
+*url* | Presence
 
 ## Create a Content
 
@@ -181,7 +259,7 @@ This endpoint create a content
 
 ### HTTP Request
 
-`POST hostname/api/v4/contents`
+`POST hostname/api/v4/contents.json`
 
 ### Parameters
 
@@ -232,7 +310,7 @@ This endpoint delete a content
 
 ### HTTP Request
 
-`DELETE hostname/api/v4/contents/<id>`
+`DELETE hostname/api/v4/contents/<id>.json`
 
 ### Parameters
 
@@ -244,7 +322,7 @@ id * |  | string
 
 ## Launch content to a specific network
 
-> If network is updated successfully
+> Launched successfully
 
 ```json
 {
@@ -268,7 +346,7 @@ network_id * |  | string
 
 ## Pick content to a specific network
 
-> If network is updated successfully
+> Launched successfully
 
 ```json
 {
@@ -288,68 +366,3 @@ Parameter | Default | Description
 --------- | ------- | -----------
 id * |  | string
 network_id * |  | string
-
-## Update a User
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> If network is updated successfully
-
-```json
-{
-  "status": "success"
-}
-```
-
-> Other failed cases please refer <a href= "#create-a-network">Create a Network API</a>
-
-This endpoint update a user
-
-### HTTP Request
-
-`PATCH hostname/api/v4/users/<id>`
-`PUT hostname/api/v4/users/<id>`
-
-### Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-id * |  | string
-email * |  | string
-password * |  | string
-first_name * |  | string
-last_name *  |  | string
-role  | user | user admin staff
-country  |  | iso country code
-gender  | male | female
-image  |  | file
-birthday  |  | datetime
-
-
-<aside class="success">
-Note: Referring <a href= "#create-a-user">Create a User API</a> for validation rules.
-</aside>

@@ -1,7 +1,7 @@
 # Networks
 
 ## Get All Networks
-> The above command returns JSON structured like this:
+> The API returns JSON structured like this:
 
 ```json
 {
@@ -74,7 +74,7 @@ limit| 20 | valid range is 1..150
 
 ## Get a Specific Network
 
-> The above command returns JSON structured like this:
+> The API returns JSON structured like this:
 
 ```json
 {
@@ -229,7 +229,7 @@ This endpoint delete a network
 
 ### HTTP Request
 
-`DELETE hostname/api/v4/networks/<id>`
+`DELETE hostname/api/v4/networks/<id>.json`
 
 ### Parameters
 
@@ -254,8 +254,9 @@ This endpoint update a network
 
 ### HTTP Request
 
-`PATCH hostname/api/v4/networks/<id>`
-`PUT hostname/api/v4/networks/<id>`
+`PATCH hostname/api/v4/networks/<id>.json`
+
+`PUT hostname/api/v4/networks/<id>.json`
 
 ### Parameters
 
