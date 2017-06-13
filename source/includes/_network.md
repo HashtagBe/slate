@@ -173,6 +173,7 @@ full_name * |  | string
 website  |  | string
 access_type  | closed | closed or open
 links  |  | Json
+widget_types_id  |  | string that separate with comma
 can_target_by_role  | false | boolean
 can_target_by_user  | false | boolean
 personalize_network_banner  | false | boolean
@@ -205,6 +206,7 @@ Parameter |  Rules
  | Less than 2 megabytes
 *color* | Mush be valid color code
   | allow_blank
+*widget_types_id* |  Mush be valid widget type id(0,1,2,...)
 
 ## Delete a Network
 
@@ -263,11 +265,12 @@ This endpoint update a network
 Parameter | Default | Description
 --------- | ------- | -----------
 id * |  | string
-name * |  | string
-full_name * |  | string
+name  |  | string
+full_name |  | string
 website  |  | string
 access_type  | closed | closed or open
 links  |  | Json
+widget_types_id  |  | string that separate with comma
 can_target_by_role  | false | boolean
 can_target_by_user  | false | boolean
 personalize_network_banner  | false | boolean

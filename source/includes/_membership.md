@@ -36,6 +36,9 @@ user_id* |  |
 network_id*|  |
 role | user |user network_manager editor contributor trusted_contributor
 
+<aside class="notice">
+This API can also be used to update role for joined user.
+</aside>
 
 ## Leave a network
 > leave a network successfully

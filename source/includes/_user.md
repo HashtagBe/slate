@@ -172,6 +172,10 @@ Parameter |  Rules
 *image* | Mush be image(jpg jpeg gif png)
  | Less than 1 megabyte
 
+ <aside class="notice">
+ Note: Referring <a href= "https://en.wikipedia.org/wiki/ISO_3166-1">ISO_3166-1</a> for validate country code.
+ </aside>
+
 ## Delete a User
 
 > If user is deleted successfully

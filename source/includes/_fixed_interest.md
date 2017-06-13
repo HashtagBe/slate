@@ -206,3 +206,45 @@ network_id * |  | string
 <aside class="success">
 The operator must be network manager
 </aside>
+
+
+## Get suggested Fixed_interest
+
+> The result for given text
+
+>London Listeni/ˈlʌndən/ is the capital and most populous city of England and the United Kingdom.[7][8] Standing on the River Thames in the south east of the island of Great Britain, London has been a major settlement for two millennia. It was founded by the Romans, who named it Londinium.[9] London's ancient core, the City of London, largely retains its 1.12-square-mile (2.9 km2) medieval boundaries. Since at least the 19th century, "London" has also referred to the metropolis around this core, historically split between Middlesex, Essex, Surrey, Kent, and Hertfordshire,[10][11][12] which today largely makes up Greater London,[13][14][note 1] governed by the Mayor of London and the London Assembly.[15][note 2][16]
+London is a leading global city[17][18] in the arts, commerce, education, entertainment, fashion, finance, healthcare, media, professional services, research and development, tourism, and transportation.[19][20][21] It is crowned as the world's largest financial centre[22][23][24][25] and has the fifth- or sixth-largest metropolitan area GDP in the world.[note 3][26][27] London is a world cultural capital.[28][29][30] It is the world's most-visited city as measured by international arrivals[31] and has the world's largest city airport system measured by passenger traffic.[32] London is the world's leading investment destination,[33][34][35] hosting more international retailers[36][37] and ultra high-net-worth individuals[38][39] than any other city. London's universities form the largest concentration of higher education institutes in Europe.[40] In 2012, London became the first city to have hosted the modern Summer Olympic Games three times.[41]
+
+```json
+{
+    "status": "success",
+    "data": [
+        "London",
+        "city",
+        "world",
+        "note"
+    ]
+}
+```
+
+
+> If params is missing
+
+```json
+{
+    "status": "fail",
+    "msg": "param is missing or the value is empty: text"
+}
+```
+
+Extract fixed_interests by given text
+
+### HTTP Request
+
+`POST hostname/api/v4/fixed_interests/suggested.json`
+
+### Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+text * |  | string

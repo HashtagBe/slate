@@ -226,7 +226,7 @@ This endpoint extract content with url provided
 Parameter | Default | Description
 --------- | ------- | -----------
 url * |  | extract url
-
+save_flag | false | save the extracted content when true
 
 ### Validation Rules
 Parameter |  Rules
