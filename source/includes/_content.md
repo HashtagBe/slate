@@ -273,6 +273,53 @@ targeted_roles|  | array
 targeted_user_ids|  | array
 image|  | file
 attachment|  | file
+fixed_interests|  | array of fixed_interests name
+content_languages|  | array
+### Validation Rules
+
+Parameter |  Rules
+--------- |  -----------
+*title* | Presence
+*widget_type_id* | Presence
+*attachment* | Less than 5 megabytes
+
+<aside class="success">
+Available widget type id please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a>
+</aside>
+
+
+
+## Update a Content
+
+> If content is updated successfully
+
+```json
+{
+  "status": "success"
+}
+```
+
+This endpoint update a content
+
+### HTTP Request
+
+`PUT hostname/api/v4/contents/<id>.json`
+
+`PATCH hostname/api/v4/contents/<id>.json`
+### Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+id * |  | string
+title * |  | string
+widget_type_id * |  | integer
+abstract |  | text
+timeliness |  | text
+targeted_roles|  | array
+targeted_user_ids|  | array
+image|  | file
+attachment|  | file
+fixed_interests|  | array of fixed_interests name
 content_languages|  | array
 ### Validation Rules
 

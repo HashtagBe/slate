@@ -5,61 +5,51 @@
 
 ```json
 {
-  "status": "success",
-  "data": [
-    {
-      "id": 1,
-      "name": "article"
-    },
-    {
-      "id": 2,
-      "name": "event"
-    },
-    {
-      "id": 3,
-      "name": "announcement"
-    },
-    {
-      "id": 4,
-      "name": "reward"
-    },
-    {
-      "id": 5,
-      "name": "web"
-    },
-    {
-      "id": 6,
-      "name": "post"
-    },
-    {
-      "id": 7,
-      "name": "file"
-    },
-    {
-      "id": 8,
-      "name": "featured"
-    },
-    {
-      "id": 9,
-      "name": "video"
-    },
-    {
-      "id": 10,
-      "name": "guidelines"
-    },
-    {
-      "id": 11,
-      "name": "training"
-    },
-    {
-      "id": 12,
-      "name": "shared"
-    },
-    {
-      "id": 13,
-      "name": "activity"
-    }
-  ]
+    "status": "success",
+    "data": [
+        {
+            "name": "unknown"
+        },
+        {
+            "name": "article"
+        },
+        {
+            "name": "event"
+        },
+        {
+            "name": "announcement"
+        },
+        {
+            "name": "reward"
+        },
+        {
+            "name": "web"
+        },
+        {
+            "name": "post"
+        },
+        {
+            "name": "file"
+        },
+        {
+            "name": "featured"
+        },
+        {
+            "name": "video"
+        },
+        {
+            "name": "guidelines"
+        },
+        {
+            "name": "training"
+        },
+        {
+            "name": "shared"
+        },
+        {
+            "name": "activity"
+        }
+    ]
 }
 ```
 
@@ -67,7 +57,7 @@ This endpoint retrieves all widget types that available in #be.
 
 ### HTTP Request
 
-`GET hostname/api/v4/widget_types`
+`GET hostname/api/v4/widget_types.json`
 
 ## Get Network Widget Types List
 
@@ -75,37 +65,45 @@ This endpoint retrieves all widget types that available in #be.
 
 ```json
 {
-  "status": "success",
-  "data": [
-    {
-      "id": 1,
-      "name": "article"
-    },
-    {
-      "id": 2,
-      "name": "event"
-    },
-    {
-      "id": 3,
-      "name": "announcement"
-    },
-    {
-      "id": 4,
-      "name": "reward"
-    },
-    {
-      "id": 11,
-      "name": "training"
-    },
-    {
-      "id": 12,
-      "name": "shared"
-    },
-    {
-      "id": 13,
-      "name": "activity"
-    }
-  ]
+    "status": "success",
+    "data": [
+        {
+            "name": "article"
+        },
+        {
+            "name": "event"
+        },
+        {
+            "name": "announcement"
+        },
+        {
+            "name": "reward"
+        },
+        {
+            "name": "web"
+        },
+        {
+            "name": "post"
+        },
+        {
+            "name": "file"
+        },
+        {
+            "name": "video"
+        },
+        {
+            "name": "activity"
+        }
+    ]
+}
+```
+
+> If network_id is invalid
+
+```json
+{
+    "status": "fail",
+    "msg": "network is not exist"
 }
 ```
 
@@ -113,10 +111,10 @@ This endpoint get widget types that available in specific network
 
 ### HTTP Request
 
-`GET hostname/api/v4/widget_types`
+`GET hostname/api/v4/widget_types.json`
 
 ### Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-network |  | string
+network_id |  | integer
