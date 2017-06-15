@@ -162,7 +162,7 @@ detail | Default value: false
 
 ## Extract Content
 
-> extract result show as below
+> extract result show as below(do not save)
 
 ```json
 {
@@ -215,6 +215,66 @@ detail | Default value: false
 }
 ```
 
+
+> Generate suggested interests
+
+```json
+{
+    "status": "success",
+    "data": {
+        "id": 5,
+        "title": "Kunming - Wikipedia",
+        "subtitle": null,
+        "authors": "",
+        "abstract": "Kunming ( Mand. pronunciation [kʰwə́n.mǐŋ]; Chinese: 昆明; pinyin: ) is the capital of and largest city in Yunnan Province, Southwest China. Known as Yunnan-Fu (云南府, Yúnnánfǔ) until the 1920s, today it is a prefecture-level city and the political, economic, communications and cultural centre of the province as well as the seat of the provincial government.",
+        "state": "ready",
+        "source": "manual_input",
+        "content_languages": [
+            "en"
+        ],
+        "url": "https://en.wikipedia.org/wiki/Kunming",
+        "video_url": null,
+        "flipsnack_url": null,
+        "website_url": "https://en.wikipedia.org",
+        "free_tags": null,
+        "event_end": null,
+        "event_start": null,
+        "event_datetime": null,
+        "publish_datetime": null,
+        "online_datetime": null,
+        "venue": null,
+        "price": null,
+        "created_at": "2017-06-15T08:21:23.160Z",
+        "updated_at": "2017-06-15T08:21:23.160Z",
+        "organizer": null,
+        "user_id": 1,
+        "network_id": null,
+        "network_source_id": null,
+        "timeliness": "month",
+        "image_width": 280,
+        "image_height": 389,
+        "coupon_code": null,
+        "creators_comment": null,
+        "reward_url": null,
+        "expires_at": "2017-07-15T08:21:23.157Z",
+        "nclaimed": 0,
+        "nstock": null,
+        "targeted_user_ids": null,
+        "targeted_roles": null,
+        "is_challenge_reward": true,
+        "attachment_content_type": null,
+        "attachment_file_size_bytes": null,
+        "image_url": {
+            "url": "/XXX/content/image/5/Kunming_montage",
+        },
+        "fixed_interests": [
+            "Kunming",
+            "city"
+        ]
+    }
+}
+```
+
 This endpoint extract content with url provided
 
 ### HTTP Request
@@ -227,6 +287,7 @@ Parameter | Default | Description
 --------- | ------- | -----------
 url * |  | extract url
 save_flag | false | save the extracted content when true
+suggest_interest_flag | false | generate suggested interest when true
 
 ### Validation Rules
 Parameter |  Rules
@@ -266,7 +327,7 @@ This endpoint create a content
 Parameter | Default | Description
 --------- | ------- | -----------
 title * |  | string
-widget_type_id * |  | integer
+widget_type * |  | string
 abstract |  | text
 timeliness |  | text
 targeted_roles|  | array
@@ -280,11 +341,12 @@ content_languages|  | array
 Parameter |  Rules
 --------- |  -----------
 *title* | Presence
-*widget_type_id* | Presence
+*widget_type* | Presence
 *attachment* | Less than 5 megabytes
+*image* | Less than 1 megabytes
 
 <aside class="success">
-Available widget type id please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a>
+Available widget type please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a>
 </aside>
 
 
@@ -312,7 +374,7 @@ Parameter | Default | Description
 --------- | ------- | -----------
 id * |  | string
 title * |  | string
-widget_type_id * |  | integer
+widget_type * |  | string
 abstract |  | text
 timeliness |  | text
 targeted_roles|  | array
@@ -326,11 +388,11 @@ content_languages|  | array
 Parameter |  Rules
 --------- |  -----------
 *title* | Presence
-*widget_type_id* | Presence
+*widget_type* | Presence
 *attachment* | Less than 5 megabytes
 
 <aside class="success">
-Available widget type id please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a>
+Available widget type please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a>
 </aside>
 
 
