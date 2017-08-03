@@ -10,9 +10,10 @@ includes:
   - membership  
   - fixed_interest
   - content
-  - widget_type      
+  - widget_type  
+  - suggestion       
   - errors
-
+  - fail_codes
 search: true
 ---
 
