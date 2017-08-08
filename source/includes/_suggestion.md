@@ -1,6 +1,6 @@
 # Suggestion
 
-## Get Suggestion List
+## POST Suggestion List
 
 > excluded structured like this:
 
@@ -75,9 +75,9 @@ This api retrieves a list of suggestion(content or fixed_interest)
 
 ### HTTP Request
 
-`GET hostname/api/v4/suggestions.json`
+`POST hostname/api/v4/suggestions.json`
 
-### Query Parameters
+### Parameters
 
 Parameter  | Default                              | Description
 ---------- | ------------------------------------ | -----------
