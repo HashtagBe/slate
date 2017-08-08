@@ -2,6 +2,12 @@
 
 ## Get Suggestion List
 
+> excluded structured like this:
+
+```json
+[{"id":26038, "type":"content"}, {"id":26034, "type":"content"}, {"id":2, "type":"fixed_interest"}]
+```
+
 > The API returns JSON structured like this:
 
 ```json
@@ -69,14 +75,15 @@ This api retrieves a list of suggestion(content or fixed_interest)
 
 ### HTTP Request
 
-`GET hostname/api/v4/suggestions`
+`GET hostname/api/v4/suggestions.json`
 
-### Parameters
+### Query Parameters
 
-Parameter  | Default                             | Description
----------- | ----------------------------------- | -----------
-network_id | required                            | integer
-amount     | retrieve all suggestions if not set | integer
+Parameter  | Default                              | Description
+---------- | ------------------------------------ | -----------
+network_id | required                             | integer
+amount     | retrieve all suggestions if not set  | integer
+excluded   | array of excluded suggestions object | Array
 
 ## Approve a Suggestion
 
