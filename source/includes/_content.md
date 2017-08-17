@@ -1,6 +1,7 @@
 # Contents
 
 ## Get Contents List
+
 > The API returns JSON structured like this:
 
 ```json
@@ -66,10 +67,9 @@ This endpoint retrieves all contents.
 ### Query Parameters
 
 Parameter | Default | Description
---------- | ------- | -----------
-offset | 0 |
-limit| 20 | valid range is 1..150
-
+--------- | ------- | ---------------------
+offset    | 0       |
+limit     | 20      | valid range is 1..150
 
 ## Get a Specific Content
 
@@ -156,9 +156,9 @@ This endpoint retrieves a specific content.
 ### URL Parameters
 
 Parameter | Description
---------- | -----------
-id * | The id of the user to retrieve
-detail | Default value: false
+--------- | ------------------------------
+id *      | The id of the user to retrieve
+detail    | Default value: false
 
 ## Extract Content
 
@@ -214,7 +214,6 @@ detail | Default value: false
   }
 }
 ```
-
 
 > Generate suggested interests
 
@@ -283,18 +282,267 @@ This endpoint extract content with url provided
 
 ### Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-url * |  | extract url
-save_flag | false | save the extracted content when true
-suggest_interest_flag | false | generate suggested interest when true
+Parameter             | Default | Description
+--------------------- | ------- | -------------------------------------
+url *                 |         | extract url
+save_flag             | false   | save the extracted content when true
+suggest_interest_flag | false   | generate suggested interest when true
 
 ### Validation Rules
-Parameter |  Rules
---------- |  -----------
-*url* | Presence
+
+Parameter | Rules
+--------- | --------
+_url_     | Presence
+
+## Extract url via embedly
+
+> Test with <https://www.youtube.com/watch?v=rmeGVhhbGrM>
+
+```json
+{
+    "status": "success",
+    "data": {
+        "table": {
+            "provider_url": "https://www.youtube.com/",
+            "description": "Follow your passion and everything will fall into place. It is okay to not have a plan. Listen to Mithila as she tells how life happens to you when you are busy planning other things. Mithila Palkar is a popular singer of Hindi and regional languages and an actor.",
+            "embeds": [],
+            "safe": true,
+            "provider_display": "www.youtube.com",
+            "related": [],
+            "favicon_url": "https://s.ytimg.com/yts/img/favicon-vflz7uhzw.ico",
+            "authors": [
+                {
+                    "url": "https://www.youtube.com/user/TEDxTalks",
+                    "name": "TEDx Talks"
+                }
+            ],
+            "images": [
+                {
+                    "caption": null,
+                    "url": "https://i.ytimg.com/vi/rmeGVhhbGrM/hqdefault.jpg",
+                    "height": 360,
+                    "width": 480,
+                    "colors": [
+                        {
+                            "color": [
+                                25,
+                                12,
+                                21
+                            ],
+                            "weight": 0.8610839844
+                        },
+                        {
+                            "color": [
+                                234,
+                                28,
+                                58
+                            ],
+                            "weight": 0.0358886719
+                        },
+                        {
+                            "color": [
+                                150,
+                                10,
+                                29
+                            ],
+                            "weight": 0.025146484400000002
+                        },
+                        {
+                            "color": [
+                                171,
+                                127,
+                                102
+                            ],
+                            "weight": 0.017578125
+                        },
+                        {
+                            "color": [
+                                139,
+                                91,
+                                69
+                            ],
+                            "weight": 0.017333984400000002
+                        }
+                    ],
+                    "entropy": 4.54953675172,
+                    "size": 9858
+                }
+            ],
+            "cache_age": 19742,
+            "language": "en",
+            "app_links": [
+                {
+                    "url": "vnd.youtube://www.youtube.com/watch?v=rmeGVhhbGrM&feature=applinks",
+                    "type": "ios",
+                    "namespace": "ai",
+                    "app_store_id": "544007664",
+                    "app_name": "YouTube"
+                },
+                {
+                    "url": "vnd.youtube://www.youtube.com/watch?v=rmeGVhhbGrM&feature=applinks",
+                    "type": "android",
+                    "namespace": "ai",
+                    "app_name": "YouTube",
+                    "package": "com.google.android.youtube"
+                },
+                {
+                    "url": "https://www.youtube.com/watch?v=rmeGVhhbGrM&feature=applinks",
+                    "type": "web",
+                    "namespace": "ai"
+                },
+                {
+                    "url": "vnd.youtube://www.youtube.com/watch?v=rmeGVhhbGrM&feature=applinks",
+                    "namespace": "twitter",
+                    "type": "ipad",
+                    "name": "YouTube",
+                    "id": "544007664"
+                },
+                {
+                    "url": "vnd.youtube://www.youtube.com/watch?v=rmeGVhhbGrM&feature=applinks",
+                    "namespace": "twitter",
+                    "type": "iphone",
+                    "name": "YouTube",
+                    "id": "544007664"
+                },
+                {
+                    "url": "https://www.youtube.com/watch?v=rmeGVhhbGrM",
+                    "namespace": "twitter",
+                    "type": "googleplay",
+                    "name": "YouTube",
+                    "id": "com.google.android.youtube"
+                },
+                {
+                    "path": "http/www.youtube.com/watch?v=rmeGVhhbGrM",
+                    "package": "com.google.android.youtube",
+                    "namespace": "google",
+                    "type": "android"
+                },
+                {
+                    "path": "vnd.youtube/www.youtube.com/watch?v=rmeGVhhbGrM",
+                    "package": "544007664",
+                    "namespace": "google",
+                    "type": "ios"
+                }
+            ],
+            "original_url": "https://www.youtube.com/watch?v=rmeGVhhbGrM",
+            "url": "https://www.youtube.com/watch?v=rmeGVhhbGrM",
+            "media": {
+                "table": {
+                    "duration": 738,
+                    "width": 854,
+                    "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FrmeGVhhbGrM%3Ffeature%3Doembed&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DrmeGVhhbGrMℑ=https%3A%2F%2Fi.ytimg.com%2Fvi%2FrmeGVhhbGrM%2Fhqdefault.jpg&key=7e4d68b3277b47de9fe84fe177882b2b&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" frameborder=\"0\" allowfullscreen></iframe>",
+                    "type": "video",
+                    "height": 480
+                }
+            },
+            "title": "It is Okay not to have a plan | Mithila Palkar | TEDxNITSilchar",
+            "offset": null,
+            "lead": null,
+            "content": null,
+            "entities": [],
+            "favicon_colors": [
+                {
+                    "color": [
+                        223,
+                        40,
+                        22
+                    ],
+                    "weight": 0.052001953100000005
+                },
+                {
+                    "color": [
+                        250,
+                        248,
+                        248
+                    ],
+                    "weight": 0.0104980469
+                }
+            ],
+            "keywords": [
+                {
+                    "score": 0,
+                    "name": "tedxtalks"
+                },
+                {
+                    "score": 0,
+                    "name": "english"
+                },
+                {
+                    "score": 0,
+                    "name": "india"
+                },
+                {
+                    "score": 0,
+                    "name": "life"
+                },
+                {
+                    "score": 0,
+                    "name": "feminism"
+                },
+                {
+                    "score": 0,
+                    "name": "passion"
+                },
+                {
+                    "score": 0,
+                    "name": "theater"
+                }
+            ],
+            "published": 1498585923000,
+            "provider_name": "YouTube",
+            "type": "html"
+        }
+    }
+}
+```
+
+> else if url is invalid
+
+```json
+{
+    "status": "fail",
+    "msg": 404
+}
+```
+
+This endpoint extract url via embedly
+
+### HTTP Request
+
+`GET hostname/api/v4/embedly.json`
+
+### Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+url *     |         | string
+
+### HTTP Request
+
+`GET hostname/api/v4/extract.json`
+
+### Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+url *     |         | extract url
+
+### Validation Rules
+
+Parameter | Rules
+--------- | --------
+_url_     | Presence
 
 ## Create a Content
+
+> Example format of links parameter
+
+```json
+[
+  {"type":"video", "url":"https://www.youtube.com/watch?v=K4zm30yeHHE", "sequence":1},
+  {"type":"video", "url":"https://www.youtube.com/watch?v=LNHBMFCzznE", "sequence":2}
+]
+```
 
 > If content is created successfully, response content id back
 
@@ -324,32 +572,33 @@ This endpoint create a content
 
 ### Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-title * |  | string
-widget_type * |  | string
-abstract |  | text
-timeliness |  | text
-targeted_roles|  | array
-targeted_user_ids|  | array
-image|  | file
-attachment|  | file
-fixed_interests|  | array of fixed_interests name
-content_languages|  | array
+Parameter     | Default | Description
+------------- | ------- | --------------------
+title *       |         | string
+widget_type * |         | string
+state *       |         | string
+abstract      |         | text
+links         |         | Array of link object
+media[cover]  |         | Cover must be image
+media[index]  |         | image or file
+
 ### Validation Rules
 
-Parameter |  Rules
---------- |  -----------
-*title* | Presence
-*widget_type* | Presence
-*attachment* | Less than 5 megabytes
-*image* | Less than 1 megabytes
+Parameter     | Rules
+------------- | ---------------------
+_title_       | Presence
+_widget_type_ | Presence
+_state_       | Presence
+_media_       | Less than 5 megabytes
 
-<aside class="success">
-Available widget type please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a>
+### Partial Validation
+
+<aside class="notice">
+Just do validation, won't save content if state is set as 'not_saved'
 </aside>
 
-
+<aside class="success">
+Available widget type please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a></aside>
 
 ## Update a Content
 
@@ -368,33 +617,33 @@ This endpoint update a content
 `PUT hostname/api/v4/contents/<id>.json`
 
 `PATCH hostname/api/v4/contents/<id>.json`
+
 ### Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-id * |  | string
-title * |  | string
-widget_type * |  | string
-abstract |  | text
-timeliness |  | text
-targeted_roles|  | array
-targeted_user_ids|  | array
-image|  | file
-attachment|  | file
-fixed_interests|  | array of fixed_interests name
-content_languages|  | array
+Parameter         | Default | Description
+----------------- | ------- | -----------------------------
+id *              |         | string
+title *           |         | string
+widget_type *     |         | string
+abstract          |         | text
+timeliness        |         | text
+targeted_roles    |         | array
+targeted_user_ids |         | array
+image             |         | file
+attachment        |         | file
+fixed_interests   |         | array of fixed_interests name
+content_languages |         | array
+
 ### Validation Rules
 
-Parameter |  Rules
---------- |  -----------
-*title* | Presence
-*widget_type* | Presence
-*attachment* | Less than 5 megabytes
+Parameter     | Rules
+------------- | ---------------------
+_title_       | Presence
+_widget_type_ | Presence
+_attachment_  | Less than 5 megabytes
 
 <aside class="success">
-Available widget type please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a>
-</aside>
-
+Available widget type please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a></aside>
 
 ## Delete a Content
 
@@ -425,9 +674,7 @@ This endpoint delete a content
 
 Parameter | Default | Description
 --------- | ------- | -----------
-id * |  | string
-
-
+id *      |         | string
 
 ## Launch content to a specific network
 
@@ -447,11 +694,10 @@ Content creator can use this endpoint to put a content to a specific network.
 
 ### Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-id * |  | string
-network_id * |  | string
-
+Parameter    | Default | Description
+------------ | ------- | -----------
+id *         |         | string
+network_id * |         | string
 
 ## Pick content to a specific network
 
@@ -471,7 +717,7 @@ This endpoint is for network manager to pick contents to specific network.
 
 ### Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-id * |  | string
-network_id * |  | string
+Parameter    | Default | Description
+------------ | ------- | -----------
+id *         |         | string
+network_id * |         | string
