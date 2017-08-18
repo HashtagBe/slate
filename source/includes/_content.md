@@ -509,23 +509,13 @@ This endpoint extract url via embedly
 
 ### HTTP Request
 
-`GET hostname/api/v4/embedly.json`
+`GET hostname/api/v4/contents/embedly.json`
 
 ### Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
 url *     |         | string
-
-### HTTP Request
-
-`GET hostname/api/v4/extract.json`
-
-### Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-url *     |         | extract url
 
 ### Validation Rules
 
@@ -570,7 +560,7 @@ This endpoint create a content
 
 `POST hostname/api/v4/contents.json`
 
-### Parameters
+### Common Parameters
 
 Parameter     | Default | Description
 ------------- | ------- | --------------------
@@ -596,6 +586,26 @@ _media_       | Less than 5 megabytes
 <aside class="notice">
 Just do validation, won't save content if state is set as 'not_saved'
 </aside>
+
+### Reward Parameters
+
+Parameter          | Default | Description
+------------------ | ------- | ------------------
+price *            |         | integer
+reward_url *       |         | string
+expires_at *       |         | date
+nstock             | 0       | integer
+is_burnable_reward |         | boolean
+coupon_code        |         | a list or one code
+
+### Event Parameters
+
+Parameter     | Default | Description
+------------- | ------- | -----------
+event_start * |         | date
+event_end     |         | date
+venue *       |         | string
+organizer *   |         | string
 
 <aside class="success">
 Available widget type please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a></aside>
