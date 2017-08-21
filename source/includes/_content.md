@@ -525,23 +525,69 @@ _url_     | Presence
 
 ## Create a Content
 
-> Example format of links parameter
+> Media Object
 
 ```json
 [
-  {"type":"video", "url":"https://www.youtube.com/watch?v=K4zm30yeHHE", "sequence":1},
-  {"type":"video", "url":"https://www.youtube.com/watch?v=LNHBMFCzznE", "sequence":2}
+  {"name":"test.docx", "file": "file_object", "type":"XXX"},
+  {"name":"test.jpg", "img": "img_object", "type":"XXX"},
+  {
+    "name":"Chinese vendors 'exploiting' African children removed from Taobao",
+    "url": "http://www.bbc.com/news/world-asia-china-40958209",
+    "domain":"bbc.com",
+    "abstract": "Customers could pay for ads..."
+  }
 ]
 ```
 
-> If content is created successfully, response content id back
+> If content is created successfully, response content back
 
 ```json
 {
-  "status": "success",
-  "data": {
-    "id": 1
-  }
+    "status": "success",
+    "data": {
+        "id": 1,
+        "title": "Lions are the coolest!!",
+        "abstract": "I’ve been thinking about it and lions are definitely the coolest 80s animals. I suspect they even play the saxophone when people have gone to sleep.",
+        "state": "published",
+        "source": "manual_input",
+        "content_languages": [
+            "en"
+        ],
+        "user_id": 944,
+        "media": [
+            {
+                "name": "word-document.docx",
+                "type": "mime-typeXXX",
+                "file_url": "https://s3.eu-central-1.amazonaws.com/hashtagbe.uploads/staging/content_medium/file/1/demo"
+            },
+            {
+                "name": "panda.jpg",
+                "type": "mime-typeYYY",
+                "img_width": 774,
+                "img_height": 365,
+                "img_url": "https://s3.eu-central-1.amazonaws.com/hashtagbe.uploads/staging/content_medium/image/2/WX20170807-132256"
+            },
+            {
+                "name": "Donald trump is bad?",
+                "url": "http://bbc.com/news/trump-at-it-again",
+                "domain": "bbc.com",
+                "abstract": "I’ve been thinking about it and ...",
+                "img_width": 258,
+                "img_height": 260,
+                "img_url": "https://s3.eu-central-1.amazonaws.com/hashtagbe.uploads/staging/content_medium/image/3/hashtag-mail"
+            }
+        ],
+        "interests": [
+            {
+                "name": "fish"
+            },
+            {
+                "name": "panda"
+            }
+        ],
+        "widget_type": "announcement"
+    }
 }
 ```
 
@@ -562,15 +608,15 @@ This endpoint create a content
 
 ### Common Parameters
 
-Parameter     | Default | Description
-------------- | ------- | --------------------
-title *       |         | string
-widget_type * |         | string
-state *       |         | string
-abstract      |         | text
-links         |         | Array of link object
-media[cover]  |         | Cover must be image
-media[index]  |         | image or file
+Parameter       | Default | Description
+--------------- | ------- | -----------------------------
+title *         |         | string
+widget_type *   |         | string
+state *         |         | string
+abstract        |         | text
+network_ids     |         | array of network_id [1,2,...]
+fixed_interests |         | array of fixed_interest name
+media[index]    |         | media object
 
 ### Validation Rules
 
