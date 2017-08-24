@@ -6,56 +6,61 @@
 
 ```json
 {
-  "status": "success",
-  "data": [
-    {
-      "id": XXX,
-      "title": "Bing",
-      "subtitle": null,
-      "authors": "",
-      "abstract": "Bing helps you turn information into action, making it faster and easier to go from searching to doing.",
-      "state": "ready",
-      "source": "manual_input",
-      "content_languages": [
-        "en"
-      ],
-      "url": "http://www.bing.com/",
-      "video_url": null,
-      "flipsnack_url": null,
-      "website_url": "http://www.bing.com",
-      "free_tags": null,
-      "event_end": null,
-      "event_start": null,
-      "event_datetime": null,
-      "publish_datetime": null,
-      "online_datetime": null,
-      "venue": null,
-      "price": null,
-      "created_at": "2017-06-07T09:10:29.000Z",
-      "updated_at": "2017-06-07T09:10:29.000Z",
-      "organizer": null,
-      "user_id": 1,
-      "network_id": null,
-      "network_source_id": null,
-      "timeliness": "month",
-      "image_width": null,
-      "image_height": null,
-      "coupon_code": null,
-      "creators_comment": null,
-      "reward_url": null,
-      "expires_at": "2017-07-07T09:10:29.000Z",
-      "nclaimed": 0,
-      "nstock": null,
-      "targeted_user_ids": null,
-      "targeted_roles": null,
-      "is_challenge_reward": true,
-      "attachment_content_type": null,
-      "attachment_file_size_bytes": null,
-      "widget_type": "article"
-    },
-    {...}
-  ]
-}
+    "status": "success",
+    "data": [
+        {
+            "id": 1,
+            "title": "Clinical and molecular response to interferon-α therapy in essential thrombocythemia patients with CALR mutations",
+            "abstract": "Myeloproliferative neoplasms are clonal disorders characterized by the presence of \r\nseveral gene mutations associated with particular hematologic parameters, clinical \r\nevolution, and prognosis. Few therapeutic options are available, among which interferon \r\nα (IFNα) presents interesting properties like the ability to induce hematologic responses \r\n(HRs) and molecular responses (MRs) in patients with JAK2 mutation.",
+            "state": "online",
+            "source": "manual_input",
+            "content_languages": [
+                "en"
+            ],
+            "user_id": null,
+            "interests": [
+                {
+                    "name": "Thrombocytopenia"
+                },
+                {
+                    "name": "Oncohematology"
+                },
+                {
+                    "name": "Myelodisplastic syndromes"
+                },
+                {
+                    "name": "Myeloproliferative neoplasms"
+                }
+            ],
+            "widget_type": "web"
+        },
+        {
+            "id": 2,
+            "title": "TfR2 links iron metabolism and erythropoiesis",
+            "abstract": "In this issue of Blood, Nai et al establish a function of transferrin receptor 2 (TfR2) as a \r\nnegative regulator of erythropoiesis. Nai et al show that mice lacking bone marrow TfR2 \r\nexhibit erythrocytosis and enhanced sensitivity to erythropoietin (Epo). Moreover, their \r\nerythroid cell maturation resembles that of iron-deficient wild-type mice.",
+            "state": "online",
+            "source": "manual_input",
+            "content_languages": [
+                "en"
+            ],
+            "user_id": null,
+            "interests": [
+                {
+                    "name": "Erythropoiesis"
+                },
+                {
+                    "name": "Iron metabolism"
+                },
+                {
+                    "name": "Erythrocytosis"
+                },
+                {
+                    "name": "Bone marrow"
+                }
+            ],
+            "widget_type": "web"
+        }
+        ]}
 ```
 
 This endpoint retrieves all contents.
@@ -73,81 +78,81 @@ limit     | 20      | valid range is 1..150
 
 ## Get a Specific Content
 
-> Set detail to true and get full version
+> Data format
 
 ```json
 {
-  "status": "success",
-  "data": {
-    "id": XXX,
-    "title": "这篇不错",
-    "subtitle": null,
-    "authors": null,
-    "abstract": null,
-    "state": "not_saved",
-    "source": "manual_input",
-    "content_languages": [
-      "zh-CN"
-    ],
-    "url": null,
-    "video_url": null,
-    "flipsnack_url": null,
-    "website_url": null,
-    "free_tags": null,
-    "event_end": null,
-    "event_start": null,
-    "event_datetime": null,
-    "publish_datetime": null,
-    "online_datetime": null,
-    "venue": null,
-    "price": null,
-    "created_at": "2017-06-05T08:48:29.000Z",
-    "updated_at": "2017-06-05T08:48:29.000Z",
-    "organizer": null,
-    "user_id": null,
-    "network_id": null,
-    "network_source_id": null,
-    "timeliness": "day",
-    "image_width": null,
-    "image_height": null,
-    "coupon_code": null,
-    "creators_comment": null,
-    "reward_url": null,
-    "expires_at": "2017-06-06T08:48:29.000Z",
-    "nclaimed": 0,
-    "nstock": null,
-    "targeted_user_ids": null,
-    "targeted_roles": null,
-    "is_challenge_reward": true,
-    "attachment_content_type": null,
-    "attachment_file_size_bytes": null,
-    "widget_type": "article"
-  }
-}
-```
-
-> Set detail to false and get simplified version
-
-```json
-{
-  "status": "success",
-  "data": {
-    "id": 25858,
-    "title": "这篇不错",
-    "subtitle": null,
-    "authors": null,
-    "abstract": null,
-    "state": "not_saved",
-    "source": "manual_input",
-    "url": null,
-    "widget_type": "article"
-  }
+    "status": "success",
+    "data": [
+        {
+            "creator_full_name": "abc abc",
+            "creator_id": 980,
+            "creator_image": "/development/user/image/980/atpf324",
+            "network_ids": [
+                1
+            ],
+            "suggested_network_ids": [],
+            "approved_network_ids": [
+                1
+            ],
+            "rejected_network_ids": [],
+            "interests": [
+                {
+                    "name": "nice",
+                    "interest_id": "90c4b7bf-6f0b-4ad1-b40b-3f7f9d5c9eac"
+                },
+                {
+                    "name": "right",
+                    "interest_id": "979f8335-0955-4b6b-96f3-4775144b026f"
+                }
+            ],
+            "widget_id": 26285,
+            "widget_name": "post",
+            "source": "manual_input",
+            "state": "online",
+            "custom_targeted": false,
+            "widget_type_id": 6,
+            "content_languages": [
+                "en"
+            ],
+            "title": "THIS ONE",
+            "abstract": "HHAHHA",
+            "snippet": "HHAHHA",
+            "nviews": 0,
+            "nimpressions": 0,
+            "ndeletes": 0,
+            "expires_at": 4657083127211,
+            "created_at": 1503483127910,
+            "expires": 4657083127211,
+            "creation_datetime": 1503483127910,
+            "tracking_code": "default",
+            "published_after_i_joined": false,
+            "creators_professional_level": "unknown",
+            "media": [
+                {
+                    "name": "demo.html",
+                    "type": "text/html"
+                },
+                {
+                    "name": "百度一下，你就知道",
+                    "domain": "baidu.com",
+                    "abstract": "null"
+                },
+                {
+                    "name": "hashtag-mail.png",
+                    "type": "image/png"
+                },
+                {
+                    "name": "WX20170727-064226@2x.png",
+                    "type": "image/png"
+                }
+            ]
+        }
+    ]
 }
 ```
 
 This endpoint retrieves a specific content.
-
-<aside class="notice">We provide two versions of response, simplified version is the default one, if you need all attributes of content, please set <code>detail</code> as true</aside>
 
 ### HTTP Request
 
@@ -155,144 +160,10 @@ This endpoint retrieves a specific content.
 
 ### URL Parameters
 
-Parameter | Description
---------- | ------------------------------
-id *      | The id of the user to retrieve
-detail    | Default value: false
-
-## Extract Content
-
-> extract result show as below(do not save)
-
-```json
-{
-  "status": "success",
-  "data": {
-    "id": null,
-    "title": "Bing",
-    "subtitle": null,
-    "authors": "",
-    "abstract": "Bing helps you turn information into action, making it faster and easier to go from searching to doing.",
-    "state": "ready",
-    "source": "manual_input",
-    "content_languages": [
-      "en"
-    ],
-    "url": "http://www.bing.com/",
-    "video_url": null,
-    "flipsnack_url": null,
-    "website_url": "http://www.bing.com",
-    "free_tags": null,
-    "event_end": null,
-    "event_start": null,
-    "event_datetime": null,
-    "publish_datetime": null,
-    "online_datetime": null,
-    "venue": null,
-    "price": null,
-    "created_at": null,
-    "updated_at": null,
-    "organizer": null,
-    "user_id": null,
-    "network_id": null,
-    "network_source_id": null,
-    "timeliness": "month",
-    "image_width": null,
-    "image_height": null,
-    "coupon_code": null,
-    "creators_comment": null,
-    "reward_url": null,
-    "expires_at": null,
-    "nclaimed": 0,
-    "nstock": null,
-    "targeted_user_ids": null,
-    "targeted_roles": null,
-    "is_challenge_reward": true,
-    "attachment_content_type": null,
-    "attachment_file_size_bytes": null,
-    "widget_type": "web"
-  }
-}
-```
-
-> Generate suggested interests
-
-```json
-{
-    "status": "success",
-    "data": {
-        "id": 5,
-        "title": "Kunming - Wikipedia",
-        "subtitle": null,
-        "authors": "",
-        "abstract": "Kunming ( Mand. pronunciation [kʰwə́n.mǐŋ]; Chinese: 昆明; pinyin: ) is the capital of and largest city in Yunnan Province, Southwest China. Known as Yunnan-Fu (云南府, Yúnnánfǔ) until the 1920s, today it is a prefecture-level city and the political, economic, communications and cultural centre of the province as well as the seat of the provincial government.",
-        "state": "ready",
-        "source": "manual_input",
-        "content_languages": [
-            "en"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Kunming",
-        "video_url": null,
-        "flipsnack_url": null,
-        "website_url": "https://en.wikipedia.org",
-        "free_tags": null,
-        "event_end": null,
-        "event_start": null,
-        "event_datetime": null,
-        "publish_datetime": null,
-        "online_datetime": null,
-        "venue": null,
-        "price": null,
-        "created_at": "2017-06-15T08:21:23.160Z",
-        "updated_at": "2017-06-15T08:21:23.160Z",
-        "organizer": null,
-        "user_id": 1,
-        "network_id": null,
-        "network_source_id": null,
-        "timeliness": "month",
-        "image_width": 280,
-        "image_height": 389,
-        "coupon_code": null,
-        "creators_comment": null,
-        "reward_url": null,
-        "expires_at": "2017-07-15T08:21:23.157Z",
-        "nclaimed": 0,
-        "nstock": null,
-        "targeted_user_ids": null,
-        "targeted_roles": null,
-        "is_challenge_reward": true,
-        "attachment_content_type": null,
-        "attachment_file_size_bytes": null,
-        "image_url": {
-            "url": "/XXX/content/image/5/Kunming_montage",
-        },
-        "fixed_interests": [
-            "Kunming",
-            "city"
-        ]
-    }
-}
-```
-
-This endpoint extract content with url provided
-
-### HTTP Request
-
-`GET hostname/api/v4/extract.json`
-
-### Parameters
-
-Parameter             | Default | Description
---------------------- | ------- | -------------------------------------
-url *                 |         | extract url
-save_flag             | false   | save the extracted content when true
-suggest_interest_flag | false   | generate suggested interest when true
-
-### Validation Rules
-
-Parameter | Rules
---------- | --------
-_url_     | Presence
+Parameter            | Description
+-------------------- | ---------------------------------
+id *                 | The id of the content to retrieve
+current_network_id * | Current network id
 
 ## Extract url via embedly
 
@@ -609,13 +480,13 @@ This endpoint create a content
 ### Common Parameters
 
 Parameter       | Default | Description
---------------- | ------- | -----------------------------
+--------------- | ------- | ---------------------------------------
 title *         |         | string
 widget_type *   |         | string
 state *         |         | string
 abstract        |         | text
 network_ids     |         | array of network_id [1,2,...]
-fixed_interests |         | array of fixed_interest name
+fixed_interests |         | fixed_interest names separated by comma
 media[index]    |         | media object
 
 ### Validation Rules
@@ -731,49 +602,3 @@ This endpoint delete a content
 Parameter | Default | Description
 --------- | ------- | -----------
 id *      |         | string
-
-## Launch content to a specific network
-
-> Launched successfully
-
-```json
-{
-  "status": "success"
-}
-```
-
-Content creator can use this endpoint to put a content to a specific network.
-
-### HTTP Request
-
-`GET hostname/api/v4/contents/<id>/launch_to_network.json`
-
-### Parameters
-
-Parameter    | Default | Description
------------- | ------- | -----------
-id *         |         | string
-network_id * |         | string
-
-## Pick content to a specific network
-
-> Launched successfully
-
-```json
-{
-  "status": "success"
-}
-```
-
-This endpoint is for network manager to pick contents to specific network.
-
-### HTTP Request
-
-`GET hostname/api/v4/contents/<id>/pick.json`
-
-### Parameters
-
-Parameter    | Default | Description
------------- | ------- | -----------
-id *         |         | string
-network_id * |         | string
