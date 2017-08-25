@@ -165,7 +165,7 @@ Parameter            | Description
 id *                 | The id of the content to retrieve
 current_network_id * | Current network id
 
-## Extract url via embedly
+## Extract Content
 
 > Test with <https://www.youtube.com/watch?v=rmeGVhhbGrM>
 
@@ -380,7 +380,7 @@ This endpoint extract url via embedly
 
 ### HTTP Request
 
-`GET hostname/api/v4/contents/embedly.json`
+`GET hostname/api/v4/contents/extract.json`
 
 ### Parameters
 
@@ -400,8 +400,8 @@ _url_     | Presence
 
 ```json
 [
-  {"name":"test.docx", "file": "file_object", "type":"XXX"},
-  {"name":"test.jpg", "img": "img_object", "type":"XXX"},
+  {"name":"test.docx", "file": "file_object", "mime_type":"XXX"},
+  {"name":"test.jpg", "image": "img_object", "mime_type":"XXX"},
   {
     "name":"Chinese vendors 'exploiting' African children removed from Taobao",
     "url": "http://www.bbc.com/news/world-asia-china-40958209",
@@ -429,31 +429,33 @@ _url_     | Presence
         "media": [
             {
                 "name": "word-document.docx",
-                "type": "mime-typeXXX",
+                "widget_type": "mime-typeXXX",
                 "file_url": "https://s3.eu-central-1.amazonaws.com/hashtagbe.uploads/staging/content_medium/file/1/demo"
             },
             {
                 "name": "panda.jpg",
-                "type": "mime-typeYYY",
-                "img_width": 774,
-                "img_height": 365,
-                "img_url": "https://s3.eu-central-1.amazonaws.com/hashtagbe.uploads/staging/content_medium/image/2/WX20170807-132256"
+                "widget_type": "mime-typeYYY",
+                "image_width": 774,
+                "image_height": 365,
+                "image_url": "https://s3.eu-central-1.amazonaws.com/hashtagbe.uploads/staging/content_medium/image/2/WX20170807-132256"
             },
             {
                 "name": "Donald trump is bad?",
                 "url": "http://bbc.com/news/trump-at-it-again",
                 "domain": "bbc.com",
                 "abstract": "I’ve been thinking about it and ...",
-                "img_width": 258,
-                "img_height": 260,
-                "img_url": "https://s3.eu-central-1.amazonaws.com/hashtagbe.uploads/staging/content_medium/image/3/hashtag-mail"
+                "image_width": 258,
+                "image_height": 260,
+                "image_url": "https://s3.eu-central-1.amazonaws.com/hashtagbe.uploads/staging/content_medium/image/3/hashtag-mail"
             }
         ],
         "interests": [
             {
+                "interest_id":"XXXXX",
                 "name": "fish"
             },
             {
+                "interest_id":"XXXXX",
                 "name": "panda"
             }
         ],
@@ -479,24 +481,24 @@ This endpoint create a content
 
 ### Common Parameters
 
-Parameter       | Default | Description
---------------- | ------- | ---------------------------------------
-title *         |         | string
-widget_type *   |         | string
-state *         |         | string
-abstract        |         | text
-network_ids     |         | array of network_id [1,2,...]
-fixed_interests |         | fixed_interest names separated by comma
-media[index]    |         | media object
+Parameter               | Default | Description
+----------------------- | ------- | ---------------------------------------
+title *                 |         | string
+widget_type_id *        |         | integer
+state *                 |         | string
+abstract                |         | text
+network_ids             |         | array of network_id [1,2,...]
+fixed_interests         |         | fixed_interest names separated by comma
+media_attributes[index] |         | media object
 
 ### Validation Rules
 
-Parameter     | Rules
-------------- | ---------------------
-_title_       | Presence
-_widget_type_ | Presence
-_state_       | Presence
-_media_       | Less than 5 megabytes
+Parameter        | Rules
+---------------- | ---------------------
+_title_          | Presence
+_widget_type_id_ | Presence
+_state_          | Presence
+_media_          | Less than 5 megabytes
 
 ### Partial Validation
 
@@ -529,6 +531,23 @@ Available widget type please refer <a href="#get-be-widget-types-list">Get #BE W
 
 ## Update a Content
 
+> Update media format
+
+```json
+[
+  /*delete id 1 media*/
+  {"id":1,"_destroy":1},  
+  /*edit id 3 media*/
+  {
+    "id": 3,
+    "name":"Chinese vendors...",
+    "url": "http://www.bbc.com/news/world-asia-china-40958209",
+    "domain":"bbc.com",
+    "abstract": "Customers could pay for ads..."
+  }
+]
+```
+
 > If content is updated successfully
 
 ```json
@@ -547,30 +566,22 @@ This endpoint update a content
 
 ### Parameters
 
-Parameter         | Default | Description
------------------ | ------- | -----------------------------
-id *              |         | string
-title *           |         | string
-widget_type *     |         | string
-abstract          |         | text
-timeliness        |         | text
-targeted_roles    |         | array
-targeted_user_ids |         | array
-image             |         | file
-attachment        |         | file
-fixed_interests   |         | array of fixed_interests name
-content_languages |         | array
+Parameter               | Default | Description
+----------------------- | ------- | ----------------------------------------------------
+title *                 |         | string
+widget_type_id *        |         | integer
+state *                 |         | string
+abstract                |         | text
+network_ids             |         | array of network_id [1,2,...]
+fixed_interests         |         | fixed_interest names separated by comma
+media_attributes[index] |         | media object(nothing need to do if no media changed)
 
 ### Validation Rules
 
-Parameter     | Rules
-------------- | ---------------------
-_title_       | Presence
-_widget_type_ | Presence
-_attachment_  | Less than 5 megabytes
-
-<aside class="success">
-Available widget type please refer <a href="#get-be-widget-types-list">Get #BE Widget Types List API</a></aside>
+Parameter        | Rules
+---------------- | --------
+_title_          | Presence
+_widget_type_id_ | Presence
 
 ## Delete a Content
 
