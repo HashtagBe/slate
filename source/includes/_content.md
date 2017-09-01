@@ -487,7 +487,7 @@ title *                 |         | string
 widget_type_id *        |         | integer
 state *                 |         | string
 abstract                |         | text
-network_ids             |         | array of network_id [1,2,...]
+network_ids             |         | like: 1,2,3,4
 fixed_interests         |         | fixed_interest names separated by comma
 media_attributes[index] |         | media object
 
@@ -568,20 +568,13 @@ This endpoint update a content
 
 Parameter               | Default | Description
 ----------------------- | ------- | ----------------------------------------------------
-title *                 |         | string
-widget_type_id *        |         | integer
-state *                 |         | string
+title                   |         | string
+widget_type_id          |         | integer
+state                   |         | string
 abstract                |         | text
-network_ids             |         | array of network_id [1,2,...]
+network_ids             |         | like: 1,2,3,4
 fixed_interests         |         | fixed_interest names separated by comma
 media_attributes[index] |         | media object(nothing need to do if no media changed)
-
-### Validation Rules
-
-Parameter        | Rules
----------------- | --------
-_title_          | Presence
-_widget_type_id_ | Presence
 
 ## Delete a Content
 
