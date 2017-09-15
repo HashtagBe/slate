@@ -605,4 +605,37 @@ This endpoint delete a content
 
 Parameter | Default | Description
 --------- | ------- | -----------
-id *      |         | string
+id *      |         | integer
+
+## Reject a Content
+
+> If content is rejected successfully
+
+```json
+{
+  "status": "success"
+}
+```
+
+> else if operator without permission
+
+```json
+/*with 403 status code*/
+{
+    "status": "fail",
+    "msg": "Only network_manager or trusted_contributor could do this operation!"
+}
+```
+
+This endpoint reject a content
+
+### HTTP Request
+
+`PUT hostname/api/v4/contents/<id>.json`
+
+### Parameters
+
+Parameter    | Default | Description
+------------ | ------- | -----------
+id *         |         | integer
+network_id * |         | integer
