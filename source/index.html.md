@@ -2,8 +2,8 @@
 title: #be API Reference
 
 toc_footers:
-  - Contact us <a href='/admin'>here</a>
-  - Log in to the <a href='mail:support@hashtag.be'>#be admin dashboard</a>
+  - Log in to the <a href='/admin'>#be admin dashboard</a>.
+  - Contact us <a href='mail:support@hashtag.be'>here</a> for more information.
 
 includes:
   - authentication

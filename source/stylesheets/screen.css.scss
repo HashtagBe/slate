@@ -625,3 +625,11 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+
+
+
+
+
+.toc-footer > li > a { text-decoration: underline; }
+
+.toc-footer > li > a:hover { color: #dddddd; }
