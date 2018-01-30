@@ -1,8 +1,12 @@
 # Content Creation from RSS
 
-## Create an RSS feed Reader
+<aside class="warning">
+Not finished, don't test yet.
+</aside>
 
-> Content created
+## Create an RSS Reader
+
+> RSS reader created
 
 ```json
 {
@@ -10,7 +14,7 @@
 }
 ```
 
-> Content creation failed
+> RSS reader creation failed
 
 ```json
 {
@@ -27,19 +31,17 @@
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
+network_id | yes | |
 
 ### Access Rights
 
 This endpoint requires an API token in the request header.
 
-<aside class="notice">
-Not finished, don't test yet.
-</aside>
 
 
 
 
-## Read Content
+## Read RSS Content
 
 > Content response
 
@@ -47,36 +49,39 @@ Not finished, don't test yet.
 {
     "status": "success",
     "data": {
-        "content": {
-            
-        }
+      "content": [
+        {
+          ... content 0 fields ...
+        },
+       {
+         ... content 1 fields ...
+       },
+       ...
+      ]
     }
 }
 ```
 
 ### HTTP Request
 
-`GET https://api.hashtag.be/api/v5/content`
+`GET https://api.hashtag.be/api/v5/content/rss`
 
 ### Parameters
 
 Parameter | Required | Description
 --------- | -------- | -----------
-content_id | yes | integer content id
+rss_id | yes | integer rss id
 
 ### Access Rights
 
 This endpoint requires an API token in the request header.
 
-<aside class="notice">
-Not finished, don't test yet.
-</aside>
 
 
 
-## Update Content
+## Update RSS Reader Settings
 
-> Content updated
+> RSS reader updated
 
 ```json
 {
@@ -84,7 +89,7 @@ Not finished, don't test yet.
 }
 ```
 
-> Content update failed
+> RSS reader update failed
 
 ```json
 {
@@ -95,28 +100,24 @@ Not finished, don't test yet.
 
 ### HTTP Request
 
-`PUT https://api.hashtag.be/api/v5/content`
+`PUT https://api.hashtag.be/api/v5/content/rss`
 
 ### Parameters
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
-content_id | yes | |
+rss_id | yes | integer rss reader id |
 
 ### Access Rights
 
 This endpoint requires an API token in the request header.
 
-<aside class="notice">
-Not finished, don't test yet.
-</aside>
 
 
 
+## Delete RSS Reader
 
-## Delete Content
-
-> Content deleted
+> RSS reader deleted
 
 ```json
 {
@@ -124,7 +125,7 @@ Not finished, don't test yet.
 }
 ```
 
-> Content was not deleted
+> RSS reader was not deleted
 
 ```json
 {
@@ -133,60 +134,17 @@ Not finished, don't test yet.
 }
 ```
 
+This also deletes all content created from this RSS.
+
 ### HTTP Request
 
-`DELETE https://api.hashtag.be/api/v5/content`
+`DELETE https://api.hashtag.be/api/v5/content/rss`
 
 ### Query Parameters
 
 Parameter | Required | Description
 --------- | -------- | -----------
-content_id | yes | integer content id
-
-### Access Rights
-
-This endpoint requires an API token in the request header.
-
-<aside class="notice">
-Not finished, don't test yet.
-</aside>
-
-
-
-
-## Extract Content from a URL
-
-> Content extracted
-
-```json
-{
-  "status": "success"
-  "data": {
-    "extracted_content": {
-
-    }
-  }
-}
-```
-
-> Content was not extracted
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
-### HTTP Request
-
-`GET https://api.hashtag.be/api/v5/content/extract`
-
-### Query Parameters
-
-Parameter | Required | Description
---------- | -------- | -----------
-url | yes | 
+rss_id | yes | integer rss reader id
 
 ### Access Rights
 

@@ -41,6 +41,10 @@ gender | no | unknown, male, female, or other | unknown
 birthday | no | 13 digit ms unix timestamp
 avatar_id | no | integer id of an image upload
 
+<aside class="warning">
+Put email settings by network into fields
+</aside>
+
 ### Access Rights
 
 This is a public endpoint accessible to all. It does not require an API token in the request header.

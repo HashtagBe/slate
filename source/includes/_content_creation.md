@@ -1,5 +1,9 @@
 # Content Creation
 
+<aside class="warning">
+Not finished, don't test yet.
+</aside>
+
 ## Create Content
 
 > Content created
@@ -27,14 +31,36 @@
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
+widget_type_id | yes | |
+user_id | yes | |
+title | yes | |
+| | |
+timeliness | no | daily, weekly, monthly, evergreen | evergreen 
+language | no | | en
+widget_name | no | | widget type name
+target_type | no | | targeted by interest
+targeted_roles | no | reader, user, trusted_contributor, network_manager | all roles
+targeted_user_ids | no | comma separated user ids | all users
+| | |
+body | no | |
+url | no | |
+| | | 
+For Events| | |
+event_start | no | 13 digit unix ms timestamp |
+event_end | no | 13 digit unix ms timestamp |
+organizer | no | |
+venue | no | | 
+| | |
+For Rewards| | |
+price | no | required for rewards |
+reward_url | no | |
+claim_text | no | | 
+coupon_ids | no | comma separated coupon ids
 
 ### Access Rights
 
 This endpoint requires an API token in the request header.
 
-<aside class="notice">
-Not finished, don't test yet.
-</aside>
 
 
 
@@ -48,9 +74,18 @@ Not finished, don't test yet.
     "status": "success",
     "data": {
         "content": {
-            
+           ... content fields ... 
         }
     }
+}
+```
+
+> Content request failed
+
+```json
+{
+  "status": "fail",
+  "message": "..."
 }
 ```
 
@@ -68,9 +103,6 @@ content_id | yes | integer content id
 
 This endpoint requires an API token in the request header.
 
-<aside class="notice">
-Not finished, don't test yet.
-</aside>
 
 
 
@@ -102,14 +134,28 @@ Not finished, don't test yet.
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
 content_id | yes | |
+title | no | |
+timeliness | no | daily, weekly, monthly, evergreen | evergreen 
+language | no | | en
+widget_name | no | | widget type name
+target_type | no | | targeted by interest
+targeted_roles | no | reader, user, trusted_contributor, network_manager | all roles
+targeted_user_ids | no | comma separated user ids | all users
+body | no | |
+url | no | |
+event_start | no | 13 digit unix ms timestamp |
+event_end | no | 13 digit unix ms timestamp |
+organizer | no | |
+venue | no | | 
+price | no | required for rewards |
+reward_url | no | |
+claim_text | no | | 
+coupon_ids | no | comma separated coupon ids
 
 ### Access Rights
 
 This endpoint requires an API token in the request header.
 
-<aside class="notice">
-Not finished, don't test yet.
-</aside>
 
 
 
@@ -147,10 +193,6 @@ content_id | yes | integer content id
 
 This endpoint requires an API token in the request header.
 
-<aside class="notice">
-Not finished, don't test yet.
-</aside>
-
 
 
 
@@ -163,7 +205,7 @@ Not finished, don't test yet.
   "status": "success"
   "data": {
     "extracted_content": {
-
+      ... content fields ...
     }
   }
 }
@@ -186,7 +228,7 @@ Not finished, don't test yet.
 
 Parameter | Required | Description
 --------- | -------- | -----------
-url | yes | 
+url | yes | url encoded url
 
 ### Access Rights
 

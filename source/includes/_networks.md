@@ -51,9 +51,13 @@ digest_scheduling_type | no | daily, weekly, monthly | weekly
 digest_day | no | monday, tuesday, wednesday, thursday, friday, saturday, sunday | monday
 digest_hour | no | 0-23 | 0
 
+<aside class="warning">
+Need to add in magazine settings and widget types to example
+</aside>
+
 ### Access Rights
 
-This endpoint requires an API token in the request header, and is only accessible to users who have user_role = staff.
+This endpoint requires an API token in the request header, and is only accessible to users who have user_role staff.
 
 
 
@@ -132,7 +136,7 @@ This endpoint requires an API token in the request header, and is only accessibl
 }
 ```
 
-> If the network is not deleted
+> If the network is not updated
 
 ```json
 {
@@ -234,6 +238,10 @@ This endpoint requires an API token in the request header, and is only accessibl
   "message": "..."
 }
 ```
+
+<aside class="warning">
+Add example output
+</aside>
 
 ### HTTP Request
 

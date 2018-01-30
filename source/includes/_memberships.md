@@ -59,6 +59,10 @@ This endpoint requires an API token in the request header. The endpoint is only 
 }
 ```
 
+<aside class="warning">
+Not finished, don't test yet.
+</aside>
+
 ### HTTP Request
 
 `POST https://api.hashtag.be/api/v5/networks/memberships/invite`
@@ -102,16 +106,12 @@ This endpoint requires an API token in the request header. The endpoint is only 
                 "ncontent_shared": 0
             },
             {
-                "membership_id": 3,
-                "network_id": 1,
-                "user_id": 1,
-                "role": "network_manager",
-                "professional_level": "starter",
-                "want_digest": true,
-                "created_at": 1516855944184,
-                "ncontent_created": 0,
-                "ncontent_shared": 0
-            }
+                ... membership 1 fields ...
+            },
+            {
+                ... membership 2 fields ...
+            },
+            ...
         ]
     }
 }

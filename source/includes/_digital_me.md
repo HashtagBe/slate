@@ -1,6 +1,8 @@
 # Digital Me
 
-
+<aside class="warning">
+Not finished, don't test yet.
+</aside>
 
 ## Storing Data in your Digital Me
 
@@ -24,12 +26,13 @@
 
 ### HTTP Request
 
-`PUT https://api.hashtag.be/api/v5/digital_me`
+`POST https://api.hashtag.be/api/v5/digital_me`
 
 ### Parameters
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
+user_id | yes | integer user id
 
 ### Access Rights
 
@@ -48,7 +51,13 @@ This endpoint requires an API token in the request header.
     "status": "success",
     "data": {
         "interests": [
-
+          {
+            ... interest 0 fields ...
+          },
+          {
+            ... interest 1 fields ...
+          },
+          ...
         ]
     }
 }

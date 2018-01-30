@@ -3,7 +3,7 @@
 
 
 
-## Find Similar Content
+## Similar Content
 
 > Response
 
@@ -13,7 +13,13 @@
   "data": 
   {
     "similar_content": [
-
+      {
+        ... content 0 fields ...
+      },
+      {
+        ... content 1 fields ...
+      },
+      ...
     ]
   }
 }
@@ -56,7 +62,13 @@ This endpoint requires an API token in the request header.
   "data": 
   {
     "search_result": [
-
+      {
+        ... content 0 fields ...
+      },
+      {
+        ... content 1 fields ...
+      },
+      ...
     ]
   }
 }
@@ -108,7 +120,15 @@ This endpoint requires an API token in the request header.
   {
     "content_id": 3,
     "comments": [
-
+      {
+        ... comment 0 fields ...
+      },
+      {
+        ... comment 1 fields ...
+      },
+      ...
+    ]
+  }
     ]
   }
 }
@@ -153,7 +173,13 @@ This endpoint requires an API token in the request header.
   "data": 
   {
     "rewards": [
-       ...
+      {
+        ... reward 0 fields ...
+      },
+      {
+        ... reward 1 fields ...
+      },
+      ...
     ]
   }
 }
@@ -168,6 +194,8 @@ This endpoint requires an API token in the request header.
 }
 ```
 
+These return the rewards by state for the current user.
+
 ### HTTP Request
 
 `GET https://api.hashtag.be/api/v5/content/rewards/available`
@@ -177,8 +205,6 @@ This endpoint requires an API token in the request header.
 `GET https://api.hashtag.be/api/v5/content/rewards/claimable`
 
 `GET https://api.hashtag.be/api/v5/content/rewards/challenges`
-
-These return the rewards in each state, for the current user.
 
 ### Query Parameters
 
@@ -206,7 +232,13 @@ This endpoint requires an API token in the request header.
   "data": 
   {
     "events": [
-       ...
+      {
+        ... events 0 fields ...
+      },
+      {
+        ... events 1 fields ...
+      },
+      ...
     ]
   }
 }
@@ -252,13 +284,19 @@ This endpoint requires an API token in the request header.
   "data": 
   {
     "tips": [
-       ...
+      {
+        ... tip 0 fields ...
+      },
+      {
+        ... tip 1 fields ...
+      },
+      ...
     ]
   }
 }
 ```
 
-> Events request failed
+> Tips request failed
 
 ```json
 {

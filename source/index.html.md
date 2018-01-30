@@ -11,13 +11,14 @@ includes:
   - content_creation_rss
   - content_retrieval
   - digital_me
-  - image_upload
+  - file_upload
   - magazine
   - memberships
   - networks
   - network_interests
   - network_syndication
   - notifications
+  - reward_coupons
   - suggested_to_you
   - users
   - user_key_value_store

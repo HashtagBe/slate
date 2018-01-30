@@ -2,7 +2,7 @@
 
 ## Retrieving Notifications
 
-> Magazine successfully retrieved
+> Notifications successfully retrieved
 
 ```json
 {
@@ -11,7 +11,7 @@
 }
 ```
 
-> Request for magazine failed
+> Request for notifications failed
 
 ```json
 {
@@ -22,13 +22,14 @@
 
 ### HTTP Request
 
-`PUT https://api.hashtag.be/api/v5/magazine`
+`GET https://api.hashtag.be/api/v5/notifications`
 
 ### Parameters
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
-
+user_id | yes | integer user id
+network_id | no | integer network id | all networks
 
 ### Access Rights
 

@@ -68,12 +68,6 @@ This is a public endpoint accessible to all. It does not require an API token in
 }
 ```
 
-\#be uses token-based authentication. The token is obtained by logging in with the user's email and password.
-
-Except where specified, \#be expects the token to be included in all API request headers:
-
-`Authorization: API_TOKEN`
-
 ### HTTP Request
 
 `POST https://api.hashtag.be/api/v5/login/facebook`
@@ -111,12 +105,6 @@ This is a public endpoint accessible to all. It does not require an API token in
   "message": "..."
 }
 ```
-
-\#be uses token-based authentication. The token is obtained by logging in with the user's email and password.
-
-Except where specified, \#be expects the token to be included in all API request headers:
-
-`Authorization: API_TOKEN`
 
 ### HTTP Request
 
@@ -166,4 +154,4 @@ new_password_confirmation|yes
 
 ### Access Rights
 
-This is only accessible to the user who is resetting their password. It requires an API token in the request header.
+This is only accessible to the user who is resetting their password. It requires an API token in the request header. Note this is not available to users who log in with Facebook or Medikey.
