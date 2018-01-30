@@ -7,8 +7,19 @@ toc_footers:
 
 includes:
   - authentication
-  - users
-  - networks
+  - content_creation
+  - content_creation_rss
+  - content_retrieval
+  - digital_me
+  - image_upload
+  - magazine
   - memberships
+  - networks
+  - network_interests
+  - network_syndication
+  - notifications
+  - suggested_to_you
+  - users
+  - user_key_value_store
 search: true
 ---

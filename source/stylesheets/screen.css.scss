@@ -630,6 +630,6 @@ html, body {
 
 
 
-.toc-footer > li > a { text-decoration: underline; }
+.toc-footer > li > a { text-decoration: underline!important; }
 
-.toc-footer > li > a:hover { color: #dddddd; }
+.toc-footer > li > a:hover { color: #666; }

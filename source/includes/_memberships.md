@@ -25,10 +25,50 @@
 
 ### Parameters
 
-Parameter | Required | Description
---------- | -------- | -----------
-network_id | yes | integer network id
-user_id | yes | integer user id
+Parameter | Required | Description | Default
+--------- | -------- | ----------- | -------
+network_id | yes | integer network id |
+user_id | yes | integer user id |
+role | no | reader, user, trusted_contributor, or network_manager | user
+professional_level | no | unknown, starter, professional, master | unknown
+want_digest | no | true or false | true
+
+### Access Rights
+
+This endpoint requires an API token in the request header. The endpoint is only accessible to users.
+
+
+
+
+## Invite a User by Email to Join a Network
+
+> Membership created
+
+```json
+{
+  "status": "success"
+}
+```
+
+> Membership creation failed
+
+```json
+{
+  "status": "fail",
+  "message": "..."
+}
+```
+
+### HTTP Request
+
+`POST https://api.hashtag.be/api/v5/networks/memberships/invite`
+
+### Parameters
+
+Parameter | Required | Description | Default
+--------- | -------- | ----------- | -------
+network_id | yes | integer network id |
+user_id | yes | integer user id |
 role | no | reader, user, trusted_contributor, or network_manager | user
 professional_level | no | unknown, starter, professional, master | unknown
 want_digest | no | true or false | true

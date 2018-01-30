@@ -1,4 +1,4 @@
-# Authentication
+# The #Be API - Authentication
 
 ## Log in
 
@@ -38,6 +38,94 @@ Parameter | Required
 --------- | --------
 email|yes
 password|yes
+
+### Access Rights
+
+This is a public endpoint accessible to all. It does not require an API token in the request header.
+
+
+
+
+## Log in with Facebook
+
+> Successful authentication
+
+```json
+{
+  "status": "success",
+  "data": {
+    "api_token": "c79df170b8ef4a2a89fc97d908f15ae1"
+  }
+}
+```
+
+> Unsuccessful authentication
+
+```json
+{
+  "status": "fail",
+  "message": "..."
+}
+```
+
+\#be uses token-based authentication. The token is obtained by logging in with the user's email and password.
+
+Except where specified, \#be expects the token to be included in all API request headers:
+
+`Authorization: API_TOKEN`
+
+### HTTP Request
+
+`POST https://api.hashtag.be/api/v5/login/facebook`
+
+### Parameters
+
+Parameter | Required
+--------- | --------
+
+### Access Rights
+
+This is a public endpoint accessible to all. It does not require an API token in the request header.
+
+
+
+
+## Log in with Medikey
+
+> Successful authentication
+
+```json
+{
+  "status": "success",
+  "data": {
+    "api_token": "c79df170b8ef4a2a89fc97d908f15ae1"
+  }
+}
+```
+
+> Unsuccessful authentication
+
+```json
+{
+  "status": "fail",
+  "message": "..."
+}
+```
+
+\#be uses token-based authentication. The token is obtained by logging in with the user's email and password.
+
+Except where specified, \#be expects the token to be included in all API request headers:
+
+`Authorization: API_TOKEN`
+
+### HTTP Request
+
+`POST https://api.hashtag.be/api/v5/login/medikey`
+
+### Parameters
+
+Parameter | Required
+--------- | --------
 
 ### Access Rights
 

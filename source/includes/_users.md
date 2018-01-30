@@ -52,6 +52,83 @@ Numeric ISO 3166 country codes are listed <a href= "https://en.wikipedia.org/wik
 
 
 
+## Create a User using Facebook OAuth2
+
+> If user is created successfully
+
+```json
+{
+    "status": "success",
+    "data": {
+        "api_token": "1499efbe07c031d32d24dd3dd20c004a"
+    }
+}
+```
+
+> If user creation fails
+
+```json
+{
+  "status": "fail",
+  "message": "..."
+}
+```
+
+### HTTP Request
+
+`POST https://api.hashtag.be/api/v5/users/facebook`
+
+### Parameters
+
+Parameter | Required | Description | Default
+--------- | -------- | ----------- | -------
+
+### Access Rights
+
+This is a public endpoint accessible to all. It does not require an API token in the request header.
+
+
+
+
+## Create a User using a MediKey Account
+
+> If user is created successfully
+
+```json
+{
+    "status": "success",
+    "data": {
+        "api_token": "1499efbe07c031d32d24dd3dd20c004a"
+    }
+}
+```
+
+> If user creation fails
+
+```json
+{
+  "status": "fail",
+  "message": "..."
+}
+```
+
+### HTTP Request
+
+`POST https://api.hashtag.be/api/v5/users/medikey`
+
+### Parameters
+
+Parameter | Required | Description | Default
+--------- | -------- | ----------- | -------
+
+### Access Rights
+
+This is a public endpoint accessible to all. It does not require an API token in the request header.
+
+
+
+
+
 ## Read a User's Settings
 
 > User settings response
@@ -86,6 +163,8 @@ Numeric ISO 3166 country codes are listed <a href= "https://en.wikipedia.org/wik
     }
 }
 ```
+
+add in email and browser settings
 
 ### HTTP Request
 
