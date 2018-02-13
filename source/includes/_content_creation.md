@@ -1,8 +1,7 @@
-# Content Creation
+# [Not Completed] Content Creation
 
-<aside class="warning">
-Not finished, don't test yet.
-</aside>
+
+
 
 ## Create Content
 
@@ -10,7 +9,12 @@ Not finished, don't test yet.
 
 ```json
 {
-  "status": "success"
+  "status": "success",
+  "data": {
+    "content": { 
+      ... content fields ...
+    }
+  }
 }
 ```
 

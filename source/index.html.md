@@ -11,7 +11,6 @@ includes:
   - content_creation_rss
   - content_retrieval
   - digital_me
-  - file_upload
   - magazine
   - memberships
   - networks
@@ -20,6 +19,7 @@ includes:
   - notifications
   - reward_coupons
   - suggested_to_you
+  - upload
   - users
   - user_key_value_store
 search: true

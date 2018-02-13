@@ -13,15 +13,6 @@
 }
 ```
 
-> If user creation fails
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
 `POST https://api.hashtag.be/api/v5/users`
@@ -41,10 +32,6 @@ gender | no | unknown, male, female, or other | unknown
 birthday | no | 13 digit ms unix timestamp
 avatar_id | no | integer id of an image upload
 
-<aside class="warning">
-Put email settings by network into fields
-</aside>
-
 ### Access Rights
 
 This is a public endpoint accessible to all. It does not require an API token in the request header.
@@ -56,7 +43,7 @@ Numeric ISO 3166 country codes are listed <a href= "https://en.wikipedia.org/wik
 
 
 
-## Create a User using Facebook OAuth2
+## [Not completed] Create a User using Facebook OAuth2
 
 > If user is created successfully
 
@@ -66,15 +53,6 @@ Numeric ISO 3166 country codes are listed <a href= "https://en.wikipedia.org/wik
     "data": {
         "api_token": "1499efbe07c031d32d24dd3dd20c004a"
     }
-}
-```
-
-> If user creation fails
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -94,7 +72,7 @@ This is a public endpoint accessible to all. It does not require an API token in
 
 
 
-## Create a User using a MediKey Account
+## [Not completed] Create a User using a MediKey Account
 
 > If user is created successfully
 
@@ -104,15 +82,6 @@ This is a public endpoint accessible to all. It does not require an API token in
     "data": {
         "api_token": "1499efbe07c031d32d24dd3dd20c004a"
     }
-}
-```
-
-> If user creation fails
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -168,8 +137,6 @@ This is a public endpoint accessible to all. It does not require an API token in
 }
 ```
 
-add in email and browser settings
-
 ### HTTP Request
 
 `GET https://api.hashtag.be/api/v5/users`
@@ -210,15 +177,6 @@ See the memberships API for details of the membership parameters provided.
 }
 ```
 
-> If the settings are not updated
-
-```json
-{
-  "status": "fail"
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
 `PUT https://api.hashtag.be/api/v5/users`
@@ -250,15 +208,6 @@ This endpoint requires an API token in the request header, and is only accessibl
 ```json
 {
   "status": "success"
-}
-```
-
-> If the user is not deleted 
-
-```json
-{
-  "status": "fail"
-  "message": "..."
 }
 ```
 

@@ -25,15 +25,6 @@
 }
 ```
 
-> Similar content search failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
 `GET https://api.hashtag.be/api/v5/content/similar`
@@ -71,15 +62,6 @@ This endpoint requires an API token in the request header.
       ...
     ]
   }
-}
-```
-
-> Search failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -134,15 +116,6 @@ This endpoint requires an API token in the request header.
 }
 ```
 
-> Comments request failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
 `GET https://api.hashtag.be/api/v5/content/comments`
@@ -182,15 +155,6 @@ This endpoint requires an API token in the request header.
       ...
     ]
   }
-}
-```
-
-> Rewards request failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -244,15 +208,6 @@ This endpoint requires an API token in the request header.
 }
 ```
 
-> Events request failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
 `GET https://api.hashtag.be/api/v5/content/events`
@@ -293,15 +248,6 @@ This endpoint requires an API token in the request header.
       ...
     ]
   }
-}
-```
-
-> Tips request failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 

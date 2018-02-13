@@ -1,21 +1,20 @@
 # Network Interests
 
+
+
+
 ## Create a Network Interest
 
 > Network interest created
 
 ```json
 {
-  "status": "success"
-}
-```
-
-> Network interest creation failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
+  "status": "success",
+  "data": {
+    "network_interest": {
+      ... network interest fields ...
+    }
+  }
 }
 ```
 
@@ -118,10 +117,12 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 ### Parameters
 
-Parameter | Required | Description
---------- | -------- | -----------
-network_id | no | integer network id
-network_interest_id | no | integer network interest id
+Parameter | Required | Description | Default
+--------- | -------- | ----------- | -------
+network_id | no | integer network id |
+network_interest_id | no | integer network interest id |
+from | no | | 0
+nnetwork_interests | no | | 18
 
 One of these parameters must be set.
 
@@ -139,15 +140,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 ```json
 {
   "status": "success"
-}
-```
-
-> Network interest update failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -178,15 +170,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 ```json
 {
   "status": "success"
-}
-```
-
-> Network interest was not deleted
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 

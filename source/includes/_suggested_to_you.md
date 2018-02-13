@@ -15,7 +15,7 @@ The approve and reject endpoints return the next suggestion, thus the get_next e
   "data": {
     "nsuggestions_remaining": 10,
     "next_suggestion": {
-            
+      ...     
     }
   }
 }
@@ -26,11 +26,11 @@ The approve and reject endpoints return the next suggestion, thus the get_next e
 ```json
 {
   "status": "fail",
-  "message": "...",
   "data": {
+    "failure_message": "",
     "nsuggestions_remaining": 10,
     "next_suggestion": {
-            
+      ...     
     }
   }
 }
@@ -63,7 +63,7 @@ This endpoint requires an API token in the request header.
     "data": {
         "nsuggestions_remaining": 10,
         "next_suggestion": {
-            
+          ...  
         }
     }
 }
@@ -76,9 +76,10 @@ This endpoint requires an API token in the request header.
   "status": "fail",
   "message": "...",
   "data": {
+    "failure_message": "", 
     "nsuggestions_remaining": 10,
     "next_suggestion": {
-            
+      ...      
     }
   }
 }

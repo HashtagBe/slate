@@ -1,4 +1,46 @@
-# The #Be API - Authentication
+# The #Be API
+
+
+
+
+## General
+
+Responses from all endpoints are in json and follow the <a href="https://labs.omniti.com/labs/jsend">JSend</a> standard.
+
+> Successful response
+
+```json
+{
+    "status": "success",
+    "data": {
+        ...
+     }
+}
+```
+
+> Example failed response
+
+```json
+{
+    "status": "fail",
+    "data": {
+        "email": "email is invalid",
+        "count": ["cannot be negative", "must be an integer"]
+     }
+}
+```
+
+> Example error response
+
+```json
+{
+    "status": "error",
+    "message": "this api route does not exist"
+}
+```
+
+
+
 
 ## Log in
 
@@ -10,15 +52,6 @@
   "data": {
     "api_token": "c79df170b8ef4a2a89fc97d908f15ae1"
   }
-}
-```
-
-> Unsuccessful authentication
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -36,8 +69,8 @@ Except where specified, \#be expects the token to be included in all API request
 
 Parameter | Required
 --------- | --------
-email|yes
-password|yes
+email | yes
+password | yes
 
 ### Access Rights
 
@@ -46,7 +79,36 @@ This is a public endpoint accessible to all. It does not require an API token in
 
 
 
-## Log in with Facebook
+## Password Reset
+
+> Password successfully reset
+
+```json
+{
+  "status": "success"
+}
+```
+
+### HTTP Request
+
+`PUT https://api.hashtag.be/api/v5/reset_password`
+
+### Parameters
+
+Parameter | Required
+--------- | --------
+new_password | yes
+new_password_confirmation | yes
+
+### Access Rights
+
+This is only accessible to the user who is resetting their password. It requires an API token in the request header. Note this is not available to users who log in with Facebook or Medikey.
+
+
+
+
+
+## [Not Completed] Log in with Facebook
 
 > Successful authentication
 
@@ -56,15 +118,6 @@ This is a public endpoint accessible to all. It does not require an API token in
   "data": {
     "api_token": "c79df170b8ef4a2a89fc97d908f15ae1"
   }
-}
-```
-
-> Unsuccessful authentication
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -84,7 +137,7 @@ This is a public endpoint accessible to all. It does not require an API token in
 
 
 
-## Log in with Medikey
+## [Not Completed] Log in with Medikey
 
 > Successful authentication
 
@@ -94,15 +147,6 @@ This is a public endpoint accessible to all. It does not require an API token in
   "data": {
     "api_token": "c79df170b8ef4a2a89fc97d908f15ae1"
   }
-}
-```
-
-> Unsuccessful authentication
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -118,40 +162,3 @@ Parameter | Required
 ### Access Rights
 
 This is a public endpoint accessible to all. It does not require an API token in the request header.
-
-
-
-
-## Password Reset
-
-> Password successfully reset
-
-```json
-{
-  "status": "success"
-}
-```
-
-> Password not reset
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
-### HTTP Request
-
-`PUT https://api.hashtag.be/api/v5/reset_password`
-
-### Parameters
-
-Parameter | Required
---------- | --------
-new_password|yes
-new_password_confirmation|yes
-
-### Access Rights
-
-This is only accessible to the user who is resetting their password. It requires an API token in the request header. Note this is not available to users who log in with Facebook or Medikey.

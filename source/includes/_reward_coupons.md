@@ -6,7 +6,12 @@
 
 ```json
 {
-  "status": "success"
+  "status": "success",
+  "data": {
+    "coupon": {
+      ... coupon fields ...
+    }
+  }
 }
 ```
 

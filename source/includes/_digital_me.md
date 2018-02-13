@@ -1,8 +1,7 @@
-# Digital Me
+# [Don't test yet] Digital Me
 
-<aside class="warning">
-Not finished, don't test yet.
-</aside>
+
+
 
 ## Storing Data in your Digital Me
 
@@ -12,15 +11,6 @@ Not finished, don't test yet.
 {
   "status": "success"
   "credits_earned": 123
-}
-```
-
-> Request to store data failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -37,7 +27,6 @@ user_id | yes | integer user id
 ### Access Rights
 
 This endpoint requires an API token in the request header.
-
 
 
 
@@ -60,15 +49,6 @@ This endpoint requires an API token in the request header.
           ...
         ]
     }
-}
-```
-
-> Request for the interest profile failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -97,15 +77,6 @@ This endpoint requires an API token in the request header.
 ```json
 {
     "status": "success"
-}
-```
-
-> Request for the interest profile failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -138,15 +109,6 @@ This endpoint requires an API token in the request header.
 ```json
 {
     "status": "success"
-}
-```
-
-> Request for the interest profile failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 

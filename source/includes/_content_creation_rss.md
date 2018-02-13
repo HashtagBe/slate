@@ -1,8 +1,5 @@
 # Content Creation from RSS
 
-<aside class="warning">
-Not finished, don't test yet.
-</aside>
 
 ## Create an RSS Reader
 
@@ -10,16 +7,12 @@ Not finished, don't test yet.
 
 ```json
 {
-  "status": "success"
-}
-```
-
-> RSS reader creation failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
+  "status": "success",
+  "data": {
+  	"rss": {
+  		... rss fields ...
+  	}
+  }
 }
 ```
 
@@ -32,6 +25,13 @@ Not finished, don't test yet.
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
 network_id | yes | |
+fetch_time_unit | no | | one_day
+every | no | | 1
+nmax_per_fetch | no | |
+publish_automatically | no | true or false | true
+enabled | no | true or false | true
+fetch_images | no | true or false | true
+timeliness | no | evergreen, month, week, or day | | week
 
 ### Access Rights
 
@@ -41,7 +41,7 @@ This endpoint requires an API token in the request header.
 
 
 
-## Read RSS Content
+## Read RSS Reader Settings
 
 > Content response
 
@@ -49,15 +49,9 @@ This endpoint requires an API token in the request header.
 {
     "status": "success",
     "data": {
-      "content": [
-        {
-          ... content 0 fields ...
-        },
-       {
-         ... content 1 fields ...
-       },
-       ...
-      ]
+      "rss": {
+        ... rss fields ...
+      }
     }
 }
 ```
@@ -89,15 +83,6 @@ This endpoint requires an API token in the request header.
 }
 ```
 
-> RSS reader update failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
 `PUT https://api.hashtag.be/api/v5/content/rss`
@@ -107,6 +92,13 @@ This endpoint requires an API token in the request header.
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
 rss_id | yes | integer rss reader id |
+fetch_time_unit | no | one_hour or one_day |
+every | no | |
+nmax_per_fetch | no | | 
+publish_automatically | no | true or false |
+enabled | no | true or false | 
+fetch_images | no | true or false | 
+timeliness | no | evergreen, month, week, or day | 
 
 ### Access Rights
 
@@ -122,15 +114,6 @@ This endpoint requires an API token in the request header.
 ```json
 {
   "status": "success"
-}
-```
-
-> RSS reader was not deleted
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 

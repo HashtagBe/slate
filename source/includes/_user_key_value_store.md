@@ -1,26 +1,17 @@
 # User Key-Value Store
 
-This is a key-value store for each user, which also contains an integer parameter called context. Normally, a network id will be used for the context. But other usages are possible. Keys are unique on user, context, and key.
+This is a key-value store for each user, which also contains an integer parameter called context. Normally, a network id will be used for the context. But other usages are possible. Keys are unique on user, context, and key, thus this is a quad key-value store.
 
 
 
 
-## Create a User- Context- Key- Value Quad
+## Create a Quad
 
 > Quad successfully created
 
 ```json
 {
   "status": "success"
-}
-```
-
-> Quad creation failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -33,9 +24,10 @@ This is a key-value store for each user, which also contains an integer paramete
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
 user_id | yes | integer user id |
+context_id | yes | integer context id |
 key | yes | string |
 value | yes | string |
-context_id | no | integer context id | 0
+
 
 ### Access Rights
 
@@ -46,27 +38,16 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 ## Read Values
 
-> Values successfully retrieved
+> Value successfully retrieved
 
 ```json
 {
   "status": "success",
   "data": {
-  	"values": ["abc", null, "def", "ghi"]
+  	"value": "abc"
   }
 }
 ```
-
-> Request for values failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
-In the case where a requested key does not exist, null is returned.
 
 ### HTTP Request
 
@@ -77,8 +58,8 @@ In the case where a requested key does not exist, null is returned.
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
 user_id | yes | integer user id |
-keys | no | comma separated strings | all keys
-context_id | no | integer context id | 0
+context_id | yes | integer context id |
+key | yes | comma separated strings |
 
 ### Access Rights
 
@@ -97,15 +78,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 }
 ```
 
-> Quad update failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
 `PUT https://api.hashtag.be/api/v5/users/key_value_store`
@@ -115,9 +87,9 @@ This endpoint requires an API token in the request header. The endpoint is only 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
 user_id | yes | integer user id |
+context_id | yes | integer context id |
 key | yes | string |
 value | yes | string |
-context_id | no | integer context id | 0
 
 ### Access Rights
 
@@ -126,22 +98,13 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 
 
-## Remove User- Context- Key- Value Quad
+## Remove Quad
 
 > Quad successfully deleted
 
 ```json
 {
   "status": "success"
-}
-```
-
-> Quad deletion failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
 }
 ```
 
@@ -154,8 +117,9 @@ This endpoint requires an API token in the request header. The endpoint is only 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
 user_id | yes | integer user id |
+context_id | yes | integer context id |
 key | yes | string |
-context_id | no | integer context id | 0
+
 
 ### Access Rights
 

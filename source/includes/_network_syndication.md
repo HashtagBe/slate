@@ -1,8 +1,6 @@
-# Network Syndication
+# [Completed but not online] Network Syndication
 
-<aside class="warning">
-Not finished, don't test yet.
-</aside>
+
 
 ## Create a Network Syndication
 
