@@ -39,7 +39,7 @@ widget_type_id | yes | |
 user_id | yes | |
 title | yes | |
 | | |
-timeliness | no | daily, weekly, monthly, evergreen | evergreen 
+timeliness | no | day, week, month, evergreen | evergreen 
 language | no | | en
 widget_name | no | | widget type name
 target_type | no | | targeted by interest

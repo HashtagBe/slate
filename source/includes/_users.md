@@ -7,8 +7,8 @@
 ```json
 {
     "status": "success",
-    "data": {
-        "api_token": "1499efbe07c031d32d24dd3dd20c004a"
+    "user": {
+        ... user parameters ...
     }
 }
 ```
@@ -26,7 +26,6 @@ password  | yes | |
 password_confirmation | yes | |
 first_name | yes | |
 last_name | yes | |
-role | no | user or staff | user 
 country | no | numeric iso country code |
 gender | no | unknown, male, female, or other | unknown
 birthday | no | 13 digit ms unix timestamp
