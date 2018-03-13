@@ -1,28 +1,49 @@
-# [Don't test yet] Digital Me
+# Digital Me
 
 
 
 
-## Storing Data in your Digital Me
-
-> Data successfully stored
-
-```json
-{
-  "status": "success"
-  "credits_earned": 123
-}
-```
+## Read a Digital Me
 
 ### HTTP Request
 
-`POST https://api.hashtag.be/api/v5/digital_me`
+`GET https://api.hashtag.be/api/v5/users/digital_me`
 
 ### Parameters
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
+user_id | yes | integer user id |
+network_id | no | integer, filters out interests not in this network |
+duration_ms | no | integer | 2 days in ms
+nmax_actions | no | integer | 10000
+nmax_interests | no | integer, number of interests returned | 1000
+sort_by | no | score, energy, power | score
+
+### Access Rights
+
+This endpoint requires an API token in the request header.
+
+
+
+
+
+
+## Storing Actions in a Digital Me
+
+### HTTP Request
+
+`PUT https://api.hashtag.be/api/v5/users/digital_me`
+
+### Parameters
+
+Parameter | Required | Description
+--------- | -------- | -----------
 user_id | yes | integer user id
+action_type | yes | magazine_visit, click_interest, create_content, click_content, view_content, share_content, save_content
+network_id | no | integer
+content_id | no | integer
+interest_ids | no | comma separated integers
 
 ### Access Rights
 
@@ -31,54 +52,12 @@ This endpoint requires an API token in the request header.
 
 
 
-## Recovering the Interest Profile of Your Digital Me
 
-> Successful request for the interest profile
-
-```json
-{
-    "status": "success",
-    "data": {
-        "interests": [
-          {
-            ... interest 0 fields ...
-          },
-          {
-            ... interest 1 fields ...
-          },
-          ...
-        ]
-    }
-}
-```
-
-### HTTP Request
-
-`GET https://api.hashtag.be/api/v5/digital_me/interest_profile`
-
-### Parameters
-
-Parameter | Required | Description | Default
---------- | -------- | ----------- | -------
-network_id | no | return only interests within this network | all networks
-ninterests | no | | all interests 
-
-### Access Rights
-
-This endpoint requires an API token in the request header.
 
 
 
 
 ## Connecting Strava, Fitbit, Under Armour, and Garmin
-
-> Successful connection
-
-```json
-{
-    "status": "success"
-}
-```
 
 ### HTTP Request
 
@@ -103,14 +82,6 @@ This endpoint requires an API token in the request header.
 
 
 ## Fetching data from Strava, Fitbit, and Under Armour
-
-> Successful connection
-
-```json
-{
-    "status": "success"
-}
-```
 
 ### HTTP Request
 

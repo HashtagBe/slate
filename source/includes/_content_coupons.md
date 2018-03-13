@@ -2,28 +2,6 @@
 
 ## Create a Reward Coupon
 
-> Coupon created
-
-```json
-{
-  "status": "success",
-  "data": {
-    "coupon": {
-      ... coupon fields ...
-    }
-  }
-}
-```
-
-> Coupon creation failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
 `POST https://api.hashtag.be/api/v5/content/rewards/coupons`
@@ -32,10 +10,9 @@
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
-network_id | yes | integer network id |
-user_id | yes | integer user id |
 coupon_code | yes | string |
 is_reusable | no | true or false | false
+content_id | no | integer content id |
 
 ### Access Rights
 
@@ -45,34 +22,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 
 ## Read a Coupon
-
-> Read coupon response
-
-```json
-{
-    "status": "success",
-    "data": {
-        "coupon": {
-            "coupon_id": 3,
-            "coupon_code": "",
-            "user_id": 1,
-            "is_reusable": false,
-            "claimed": "false",
-            "created_at": 1516855944184,
-            "updated_at": 1516855944184
-        }
-    }
-}
-```
-
-> Coupon read failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
 
 ### HTTP Request
 
@@ -95,23 +44,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 ## Update a Coupon
 
-> Coupon updated
-
-```json
-{
-  "status": "success"
-}
-```
-
-> Coupon update failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
 `PUT https://api.hashtag.be/api/v5/content/rewards/coupons`
@@ -132,23 +64,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 
 ## Delete a Coupon
-
-> Coupon deleted
-
-```json
-{
-  "status": "success"
-}
-```
-
-> Coupon was not deleted
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
 
 ### HTTP Request
 

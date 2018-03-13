@@ -5,7 +5,7 @@
 
 ## Create Content
 
-> Content created
+> Content created or updated
 
 ```json
 {
@@ -18,7 +18,7 @@
 }
 ```
 
-> Content creation failed
+> Content creation or update failed
 
 ```json
 {
@@ -35,7 +35,7 @@
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
-widget_type_id | yes | |
+content_type_id | yes | |
 user_id | yes | |
 title | yes | |
 | | |

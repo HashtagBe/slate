@@ -2,19 +2,6 @@
 
 ## Create a Membership
 
-> Membership created
-
-```json
-{
-  "status": "success",
-  "data": {
-    "membership": {
-       ... membership fields ... 
-    }
-  }
-}
-```
-
 ### HTTP Request
 
 `POST https://api.hashtag.be/api/v5/networks/memberships`
@@ -44,19 +31,7 @@ This endpoint requires an API token in the request header. The endpoint is only 
 {
     "status": "success",
     "data": {
-        "network_id": "1",
         "memberships": [
-            {
-                "membership_id": 2,
-                "network_id": 1,
-                "user_id": 2,
-                "role": "reader",
-                "professional_level": "unknown",
-                "want_digest": true,
-                "created_at": 1516854053694,
-                "ncontent_created": 0,
-                "ncontent_shared": 0
-            },
             {
                 ... membership 1 fields ...
             },
@@ -76,15 +51,7 @@ This endpoint requires an API token in the request header. The endpoint is only 
     "status": "success",
     "data": {
         "membership": {
-            "membership_id": 3,
-            "network_id": 1,
-            "user_id": 1,
-            "role": "network_manager",
-            "professional_level": "starter",
-            "want_digest": true,
-            "created_at": 1516855944184,
-            "ncontent_created": 0,
-            "ncontent_shared": 0
+            ... membership fields ...
         }
     }
 }
@@ -114,14 +81,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 ## Update a Membership
 
-> Membership updated
-
-```json
-{
-  "status": "success"
-}
-```
-
 ### HTTP Request
 
 `PUT https://api.hashtag.be/api/v5/networks/memberships`
@@ -143,14 +102,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 
 ## Delete a Membership
-
-> Membership deleted
-
-```json
-{
-  "status": "success"
-}
-```
 
 ### HTTP Request
 

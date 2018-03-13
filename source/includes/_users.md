@@ -2,17 +2,6 @@
 
 ## Create a User
 
-> If user is created successfully
-
-```json
-{
-    "status": "success",
-    "user": {
-        ... user parameters ...
-    }
-}
-```
-
 ### HTTP Request
 
 `POST https://api.hashtag.be/api/v5/users`
@@ -44,17 +33,6 @@ Numeric ISO 3166 country codes are listed <a href= "https://en.wikipedia.org/wik
 
 ## [Not completed] Create a User using Facebook OAuth2
 
-> If user is created successfully
-
-```json
-{
-    "status": "success",
-    "data": {
-        "api_token": "1499efbe07c031d32d24dd3dd20c004a"
-    }
-}
-```
-
 ### HTTP Request
 
 `POST https://api.hashtag.be/api/v5/users/facebook`
@@ -72,17 +50,6 @@ This is a public endpoint accessible to all. It does not require an API token in
 
 
 ## [Not completed] Create a User using a MediKey Account
-
-> If user is created successfully
-
-```json
-{
-    "status": "success",
-    "data": {
-        "api_token": "1499efbe07c031d32d24dd3dd20c004a"
-    }
-}
-```
 
 ### HTTP Request
 
@@ -102,39 +69,6 @@ This is a public endpoint accessible to all. It does not require an API token in
 
 
 ## Read a User's Settings
-
-> User settings response
-
-```json
-{
-    "status": "success",
-    "data": {
-        "user": {
-            "user_id": 1,
-            "full_name": "John Wayne",
-            "first_name": "John",
-            "last_name": "Wayne",
-            "email": "john_wayne@hashtag.be",
-            "role": "staff",
-            "gender": "unknown",
-            "api_token": "0a6d4c91cda5b35e6a7604039bf7ed2f",
-            "memberships": [
-                {
-                    "membership_id": 3,
-                    "network_id": 1,
-                    "user_id": 1,
-                    "role": "network_manager",
-                    "professional_level": "starter",
-                    "want_digest": true,
-                    "created_at": 1516855944184,
-                    "ncontent_created": 0,
-                    "ncontent_shared": 0
-                }
-            ]
-        }
-    }
-}
-```
 
 ### HTTP Request
 
@@ -168,14 +102,6 @@ See the memberships API for details of the membership parameters provided.
 
 ## Update a User's Settings
 
-> If the settings are updated successfully
-
-```json
-{
-  "status": "success"
-}
-```
-
 ### HTTP Request
 
 `PUT https://api.hashtag.be/api/v5/users`
@@ -184,14 +110,13 @@ See the memberships API for details of the membership parameters provided.
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
-email     | yes | |
+user_id | yes | integer user id
 first_name | yes | |
 last_name | yes | |
 role | no | user or staff | user 
 country | no | numeric iso country code |
 gender | no | unknown, male, female, other | unknown
 birthday | no | 13 digit ms unix timestamp
-avatar_id | no | integer id of an image upload
 
 ### Access Rights
 
@@ -201,14 +126,6 @@ This endpoint requires an API token in the request header, and is only accessibl
 
 
 ## Delete a User
-
-> If the user is deleted successfully
-
-```json
-{
-  "status": "success"
-}
-```
 
 ### HTTP Request
 

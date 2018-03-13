@@ -3,22 +3,9 @@
 
 ## Create an RSS Reader
 
-> RSS reader created
-
-```json
-{
-  "status": "success",
-  "data": {
-  	"rss": {
-  		... rss fields ...
-  	}
-  }
-}
-```
-
 ### HTTP Request
 
-`POST https://api.hashtag.be/api/v5/content/rss`
+`POST https://api.hashtag.be/api/v5/content/rss_feed`
 
 ### Parameters
 
@@ -43,28 +30,15 @@ This endpoint requires an API token in the request header.
 
 ## Read RSS Reader Settings
 
-> Content response
-
-```json
-{
-    "status": "success",
-    "data": {
-      "rss": {
-        ... rss fields ...
-      }
-    }
-}
-```
-
 ### HTTP Request
 
-`GET https://api.hashtag.be/api/v5/content/rss`
+`GET https://api.hashtag.be/api/v5/content/rss_feed`
 
 ### Parameters
 
 Parameter | Required | Description
 --------- | -------- | -----------
-rss_id | yes | integer rss id
+rss_feed_id | yes | integer rss feed id
 
 ### Access Rights
 
@@ -75,23 +49,15 @@ This endpoint requires an API token in the request header.
 
 ## Update RSS Reader Settings
 
-> RSS reader updated
-
-```json
-{
-  "status": "success"
-}
-```
-
 ### HTTP Request
 
-`PUT https://api.hashtag.be/api/v5/content/rss`
+`PUT https://api.hashtag.be/api/v5/content/rss_feed`
 
 ### Parameters
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
-rss_id | yes | integer rss reader id |
+rss_feed_id | yes | integer rss reader id |
 fetch_time_unit | no | one_hour or one_day |
 every | no | |
 nmax_per_fetch | no | | 
@@ -109,25 +75,17 @@ This endpoint requires an API token in the request header.
 
 ## Delete RSS Reader
 
-> RSS reader deleted
-
-```json
-{
-  "status": "success"
-}
-```
-
-This also deletes all content created from this RSS.
+This also deletes all content created from this RSS feed.
 
 ### HTTP Request
 
-`DELETE https://api.hashtag.be/api/v5/content/rss`
+`DELETE https://api.hashtag.be/api/v5/content/rss_feed`
 
 ### Query Parameters
 
 Parameter | Required | Description
 --------- | -------- | -----------
-rss_id | yes | integer rss reader id
+rss_feed_id | yes | integer rss feed id
 
 ### Access Rights
 

@@ -7,14 +7,6 @@ This is a key-value store for each user, which also contains an integer paramete
 
 ## Create a Quad
 
-> Quad successfully created
-
-```json
-{
-  "status": "success"
-}
-```
-
 ### HTTP Request
 
 `POST https://api.hashtag.be/api/v5/users/key_value_store`
@@ -38,17 +30,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 ## Read Values
 
-> Value successfully retrieved
-
-```json
-{
-  "status": "success",
-  "data": {
-  	"value": "abc"
-  }
-}
-```
-
 ### HTTP Request
 
 `GET https://api.hashtag.be/api/v5/users/key_value_store`
@@ -69,14 +50,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 
 ## Update a Value
-
-> Quad successfully updated
-
-```json
-{
-  "status": "success"
-}
-```
 
 ### HTTP Request
 
@@ -99,14 +72,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 
 ## Remove Quad
-
-> Quad successfully deleted
-
-```json
-{
-  "status": "success"
-}
-```
 
 ### HTTP Request
 

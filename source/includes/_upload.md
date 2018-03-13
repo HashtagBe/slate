@@ -1,4 +1,4 @@
-# [Not Completed] Uploads
+# Uploads
 
 
 ## Create an Upload

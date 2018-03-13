@@ -9,18 +9,19 @@ includes:
   - authentication
   - content_creation
   - content_creation_rss
+  - content_coupons
   - content_retrieval
+  - content_network_connector
   - digital_me
   - magazine
   - memberships
   - networks
   - network_interests
-  - network_syndication
   - notifications
-  - reward_coupons
   - suggested_to_you
   - upload
   - users
   - user_key_value_store
+  - wallet
 search: true
 ---

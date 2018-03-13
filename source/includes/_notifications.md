@@ -1,4 +1,4 @@
-# [Completed but not online] Notifications
+# Notifications
 
 ## Retrieving Notifications
 

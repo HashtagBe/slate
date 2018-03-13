@@ -5,19 +5,6 @@
 
 ## Create a Network Interest
 
-> Network interest created
-
-```json
-{
-  "status": "success",
-  "data": {
-    "network_interest": {
-      ... network interest fields ...
-    }
-  }
-}
-```
-
 ### HTTP Request
 
 `POST https://api.hashtag.be/api/v5/networks/network_interests`
@@ -49,41 +36,12 @@ This endpoint requires an API token in the request header. The endpoint is only 
         "network_id": "1",
         "network_interests": [
             {
-                "id": 1,
-                "name": "interest0",
-                "language": "en",
-                "state": "suggested",
-                "network_id": 1,
-                "interest_ids": [
-                    1
-                ],
-                "interest_type": "manually_created",
-                "created_at": 1517216150286
+                ... network interest 1 fields ...
             },
             {
-                "id": 2,
-                "name": "interest1",
-                "language": "en",
-                "state": "suggested",
-                "network_id": 1,
-                "interest_ids": [
-                    2
-                ],
-                "interest_type": "manually_created",
-                "created_at": 1517216150331
+                ... network interest 2 fields ...
             },
-            {
-                "id": 3,
-                "name": "INTEREST0",
-                "language": "en",
-                "state": "suggested",
-                "network_id": 1,
-                "interest_ids": [
-                    1
-                ],
-                "interest_type": "manually_created",
-                "created_at": 1517216150335
-            }
+            ...
         ]
     }
 }
@@ -96,16 +54,7 @@ This endpoint requires an API token in the request header. The endpoint is only 
     "status": "success",
     "data": {
         "network_interest": {
-            "id": 3,
-            "name": "INTEREST0",
-            "language": "en",
-            "state": "suggested",
-            "network_id": 1,
-            "interest_ids": [
-                1
-            ],
-            "interest_type": "manually_created",
-            "created_at": 1517216150335
+            ... network interest fields ...
         }
     }
 }
@@ -135,14 +84,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 ## Update a Network Interest
 
-> Network interest updated
-
-```json
-{
-  "status": "success"
-}
-```
-
 ### HTTP Request
 
 `PUT https://api.hashtag.be/api/v5/networks/network_interests`
@@ -164,14 +105,6 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 
 ## Delete a Network Interest
-
-> Network interest deleted
-
-```json
-{
-  "status": "success"
-}
-```
 
 ### HTTP Request
 

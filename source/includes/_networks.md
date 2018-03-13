@@ -4,19 +4,6 @@
 
 ## Create a Network
 
-> Network was created successfully
-
-```json
-{
-  "status": "success",
-  "data": {
-    "network": {
-      ... network fields ...
-    }
-  }
-}
-```
-
 ### HTTP Request
 
 `POST https://api.hashtag.be/api/v5/networks`
@@ -44,7 +31,7 @@ can_target_by_user | no | true or false | true
 personalize_network_banner | no | true or false | false
 default_role | no | reader, user, contributor, network_manager | user
 digest_scheduling_type | no | daily, weekly, monthly | weekly
-digest_day | no | monday, tuesday, wednesday, thursday, friday, saturday, sunday | monday
+digest_day | no | 0-6, sunday to saturday | 1
 digest_hour | no | 0-23 | 0
 
 <aside class="warning">
@@ -60,51 +47,6 @@ This endpoint requires an API token in the request header, and is only accessibl
 
 ## Read a Network's Settings
 
-> Network settings response
-
-```json
-{
-    "status": "success",
-    "data": {
-        "network": {
-            "network_id": 1,
-            "name": "test",
-            "full_name": "#be test network",
-            "description": "This is to put in all those tests after launch",
-
-            "logo": "<url for logo image>",
-            "banner": "<url for banner image>",
-            "background": "<url for background image>",
-            "rgb_hex_color": "dddddd",
-
-            "website": "<website link>",
-            "facebook": "<facebook link>",
-            "linkedin": "<linked in link>",
-            "twitter": "<twitter link>", 
-
-            "access_type": "open",
-            "hidden": false,  
-            "can_share_widgets": true,
-            "can_target_by_role": true,
-            "can_target_by_user": true,
-            "personalize_network_banner": true,
-            "default_role": "user",
-            "created_at": 1516942298423,
-            
-            "digest_scheduling_type": "weekly",
-            "digest_day": "monday",
-            "digest_hour": 4, 
-
-            "widget_types": [],
-            "syndicators": [],
-            "network_interests": [],
-            "memberships_count": 2,
-            "content_count": 0
-        }
-    }
-}
-```
-
 ### HTTP Request
 
 `GET https://api.hashtag.be/api/v5/networks`
@@ -113,7 +55,8 @@ This endpoint requires an API token in the request header, and is only accessibl
 
 Parameter | Required | Description
 --------- | -------- | -----------
-network_id   | yes      | integer network id
+network_id   | no  | integer network id
+network_name | no | name of network
 
 ### Access Rights
 
@@ -123,14 +66,6 @@ This endpoint requires an API token in the request header, and is only accessibl
 
 
 ## Update a Network's Settings
-
-> If the network settings are updated successfully
-
-```json
-{
-  "status": "success"
-}
-```
 
 ### HTTP Request
 
@@ -172,14 +107,6 @@ This endpoint requires an API token in the request header, and is only accessibl
 
 ## Delete a Network
 
-> If the network is deleted successfully
-
-```json
-{
-  "status": "success"
-}
-```
-
 ### HTTP Request
 
 `DELETE https://api.hashtag.be/api/v5/networks`
@@ -199,14 +126,6 @@ This endpoint requires an API token in the request header, and is only accessibl
 
 
 ## [Not completed] Network Analytics
-
-> If the network is deleted successfully
-
-```json
-{
-  "status": "success"
-}
-```
 
 ### HTTP Request
 

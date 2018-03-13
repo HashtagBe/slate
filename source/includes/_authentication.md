@@ -7,14 +7,24 @@
 
 Responses from all endpoints are in json and follow the <a href="https://labs.omniti.com/labs/jsend">JSend</a> standard.
 
-> Successful response
+Most endpoints follow a standard CRUD pattern. In these cases, with the exception of destroy, the object dealt with is returned in the response unless otherwise specified below.
+
+> Successful response from create, read, and update requests
 
 ```json
 {
     "status": "success",
     "data": {
-        ...
+        ... object fields ...
      }
+}
+```
+
+> Successful response from a delete requests
+
+```json
+{
+    "status": "success"
 }
 ```
 
@@ -50,7 +60,9 @@ Responses from all endpoints are in json and follow the <a href="https://labs.om
 {
   "status": "success",
   "data": {
-    "api_token": "c79df170b8ef4a2a89fc97d908f15ae1"
+    "user": {
+      ... user settings ...
+    }  
   }
 }
 ```
