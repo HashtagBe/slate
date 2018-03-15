@@ -1,11 +1,11 @@
 # Content Creation from RSS
 
 
-## Create an RSS Reader
+## Create an RSS Feed Reader
 
 ### HTTP Request
 
-`POST https://api.hashtag.be/api/v5/content/rss_feed`
+`POST https://api.hashtag.be/api/v5/content/rss_feeds`
 
 ### Parameters
 
@@ -28,11 +28,11 @@ This endpoint requires an API token in the request header.
 
 
 
-## Read RSS Reader Settings
+## Read RSS Feed Settings
 
 ### HTTP Request
 
-`GET https://api.hashtag.be/api/v5/content/rss_feed`
+`GET https://api.hashtag.be/api/v5/content/rss_feeds`
 
 ### Parameters
 
@@ -47,11 +47,11 @@ This endpoint requires an API token in the request header.
 
 
 
-## Update RSS Reader Settings
+## Update RSS Feed Settings
 
 ### HTTP Request
 
-`PUT https://api.hashtag.be/api/v5/content/rss_feed`
+`PUT https://api.hashtag.be/api/v5/content/rss_feeds`
 
 ### Parameters
 
@@ -73,13 +73,13 @@ This endpoint requires an API token in the request header.
 
 
 
-## Delete RSS Reader
+## Delete RSS Feed
 
 This also deletes all content created from this RSS feed.
 
 ### HTTP Request
 
-`DELETE https://api.hashtag.be/api/v5/content/rss_feed`
+`DELETE https://api.hashtag.be/api/v5/content/rss_feeds`
 
 ### Query Parameters
 
@@ -90,3 +90,23 @@ rss_feed_id | yes | integer rss feed id
 ### Access Rights
 
 This endpoint requires an API token in the request header.
+
+
+
+
+## Fetch RSS content
+
+### HTTP Request
+
+`POST https://api.hashtag.be/api/v5/content/rss_feeds/fetch`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | -------- | -----------
+rss_feed_id | yes | integer rss feed id
+
+### Access Rights
+
+This endpoint requires an API token in the request header.
+

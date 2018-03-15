@@ -4,7 +4,7 @@
 
 ### HTTP Request
 
-`POST https://api.hashtag.be/api/v5/content/content_network_connector`
+`POST https://api.hashtag.be/api/v5/content/content_network_connectors`
 
 ### Parameters
 
@@ -28,7 +28,7 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 ### HTTP Request
 
-`GET https://api.hashtag.be/api/v5/content/content_network_connector`
+`GET https://api.hashtag.be/api/v5/content/content_network_connectors`
 
 ### Parameters
 
@@ -50,7 +50,7 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 ### HTTP Request
 
-`PUT https://api.hashtag.be/api/v5/content/content_network_connector`
+`PUT https://api.hashtag.be/api/v5/content/content_network_connectors`
 
 ### Parameters
 
@@ -72,7 +72,7 @@ State can only be updated by network managers.
 
 ### HTTP Request
 
-`DELETE https://api.hashtag.be/api/v5/content/content_network_connector`
+`DELETE https://api.hashtag.be/api/v5/content/content_network_connectors`
 
 ### Query Parameters
 

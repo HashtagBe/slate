@@ -36,18 +36,17 @@
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
 content_type_id | yes | |
-user_id | yes | |
+creator_id | yes | |
 title | yes | |
 | | |
 timeliness | no | day, week, month, evergreen | evergreen 
-language | no | | en
-widget_name | no | | widget type name
-target_type | no | | targeted by interest
-targeted_roles | no | reader, user, trusted_contributor, network_manager | all roles
-targeted_user_ids | no | comma separated user ids | all users
+content_type_name | no | | content type name
+source | no | | targeted by interest
+
 | | |
 body | no | |
 url | no | |
+creators_comment | no | |
 | | | 
 For Events| | |
 event_start | no | 13 digit unix ms timestamp |
@@ -56,7 +55,7 @@ organizer | no | |
 venue | no | | 
 | | |
 For Rewards| | |
-price | no | required for rewards |
+price | (yes) | required for rewards |
 reward_url | no | |
 claim_text | no | | 
 coupon_ids | no | comma separated coupon ids
@@ -208,25 +207,16 @@ This endpoint requires an API token in the request header.
 {
   "status": "success"
   "data": {
-    "extracted_content": {
+    "extracted_fields": {
       ... content fields ...
     }
   }
 }
 ```
 
-> Content was not extracted
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
-`GET https://api.hashtag.be/api/v5/content/extract`
+`POST https://api.hashtag.be/api/v5/content/extract`
 
 ### Query Parameters
 
