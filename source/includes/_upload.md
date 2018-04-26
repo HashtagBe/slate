@@ -1,28 +1,8 @@
 # Uploads
 
 
+
 ## Create an Upload
-
-> File successfully stored
-
-```json
-{
-  "status": "success",
-  {
-    "upload_id": 123,
-    "url": ""
-  }
-}
-```
-
-> Request to store file failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
 
 ### HTTP Request
 
@@ -32,43 +12,28 @@
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
-user_id | yes | integer user id |
-usage | yes | attachment, network_logo, network_banner, network_background, content_image, user_image |
-data | yes | base 64 data |
+upload_type_name | yes | one of |
+data | no | base 64 encoded data | 
+
+link_url | no | |
+title | no | |
+body | no | |
+image_url | no | |
+position | no | |
+is_cover_image | |
 
 ### Access Rights
 
 This endpoint requires an API token in the request header.
-
 
 
 
 
 ## Read an Upload
 
-> Successful request for the upload
-
-```json
-{
-    "status": "success",
-    "data": {
-        "url": ""
-    }
-}
-```
-
-> Request for the file failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
-`POST https://api.hashtag.be/api/v5/uploads`
+`GET https://api.hashtag.be/api/v5/uploads`
 
 ### Parameters
 
@@ -84,34 +49,42 @@ This endpoint requires an API token in the request header.
 
 
 
+## Update Content
+
+### HTTP Request
+
+`PUT https://api.hashtag.be/api/v5/uploads`
+
+### Parameters
+
+Parameter | Required | Description | Default
+--------- | -------- | ----------- | -------
+upload_id | yes | |
+link_url | no | |
+title | no | |
+body | no | |
+image_url | no | |
+position | no | |
+is_cover_image | |
+
+### Access Rights
+
+This endpoint requires an API token in the request header.
+
+
+
+
 ## Delete an Upload
-
-> Upload successfully deleted
-
-```json
-{
-    "status": "success"
-}
-```
-
-> Upload not deleted
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
 
 ### HTTP Request
 
 `DELETE https://api.hashtag.be/api/v5/uploads`
 
-### Parameters
+### Query Parameters
 
 Parameter | Required | Description
 --------- | -------- | -----------
-upload_id | yes | integer identifier
+upload_id | yes | integer content id
 
 ### Access Rights
 

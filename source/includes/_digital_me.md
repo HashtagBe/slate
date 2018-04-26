@@ -53,6 +53,25 @@ This endpoint requires an API token in the request header.
 
 
 
+## Getting the Credits Balance
+
+### HTTP Request
+
+`GET https://api.hashtag.be/api/v5/users/wallet/balance`
+
+### Parameters
+
+Parameter | Required | Description
+--------- | -------- | -----------
+user_id | yes | integer user id
+
+### Access Rights
+
+This endpoint requires an API token in the request header.
+
+
+
+
 
 
 

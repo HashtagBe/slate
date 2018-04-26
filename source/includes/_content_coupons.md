@@ -79,3 +79,44 @@ coupon_id | yes | integer coupon id
 
 This endpoint requires an API token in the request header. The endpoint is only accessible to the users who are members of the network with role manager, and to the member user themselves.
 
+
+
+
+## Claim a Reward Coupon
+
+### HTTP Request
+
+`POST https://api.hashtag.be/api/v5/content/rewards/claim`
+
+### Parameters
+
+Parameter | Required | Description | Default
+--------- | -------- | ----------- | -------
+user_id | yes | integer id |
+reward_id | yes | integer id | 
+
+### Access Rights
+
+This endpoint requires an API token in the request header. The endpoint is only accessible to users.
+
+
+
+## Decline a Reward Coupon
+
+### HTTP Request
+
+`POST https://api.hashtag.be/api/v5/content/rewards/decline`
+
+### Parameters
+
+Parameter | Required | Description | Default
+--------- | -------- | ----------- | -------
+user_id | yes | integer id |
+reward_id | yes | integer id | 
+
+### Access Rights
+
+This endpoint requires an API token in the request header. The endpoint is only accessible to users.
+
+
+

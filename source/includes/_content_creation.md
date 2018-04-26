@@ -5,28 +5,6 @@
 
 ## Create Content
 
-> Content created or updated
-
-```json
-{
-  "status": "success",
-  "data": {
-    "content": { 
-      ... content fields ...
-    }
-  }
-}
-```
-
-> Content creation or update failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
 `POST https://api.hashtag.be/api/v5/content`
@@ -46,6 +24,7 @@ source | no | | targeted by interest
 | | |
 body | no | |
 url | no | |
+upload_ids[] | no | upload ids
 creators_comment | no | |
 | | | 
 For Events| | |
@@ -58,7 +37,7 @@ For Rewards| | |
 price | (yes) | required for rewards |
 reward_url | no | |
 claim_text | no | | 
-coupon_ids | no | comma separated coupon ids
+coupon_ids[] | no | coupon ids
 
 ### Access Rights
 
@@ -69,28 +48,6 @@ This endpoint requires an API token in the request header.
 
 
 ## Read Content
-
-> Content response
-
-```json
-{
-    "status": "success",
-    "data": {
-        "content": {
-           ... content fields ... 
-        }
-    }
-}
-```
-
-> Content request failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
 
 ### HTTP Request
 
@@ -110,23 +67,6 @@ This endpoint requires an API token in the request header.
 
 
 ## Update Content
-
-> Content updated
-
-```json
-{
-  "status": "success"
-}
-```
-
-> Content update failed
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
 
 ### HTTP Request
 
@@ -165,23 +105,6 @@ This endpoint requires an API token in the request header.
 
 ## Delete Content
 
-> Content deleted
-
-```json
-{
-  "status": "success"
-}
-```
-
-> Content was not deleted
-
-```json
-{
-  "status": "fail",
-  "message": "..."
-}
-```
-
 ### HTTP Request
 
 `DELETE https://api.hashtag.be/api/v5/content`
@@ -201,19 +124,6 @@ This endpoint requires an API token in the request header.
 
 ## Extract Content from a URL
 
-> Content extracted
-
-```json
-{
-  "status": "success"
-  "data": {
-    "extracted_fields": {
-      ... content fields ...
-    }
-  }
-}
-```
-
 ### HTTP Request
 
 `POST https://api.hashtag.be/api/v5/content/extract`
@@ -223,6 +133,68 @@ This endpoint requires an API token in the request header.
 Parameter | Required | Description
 --------- | -------- | -----------
 url | yes | url encoded url
+
+### Access Rights
+
+This endpoint requires an API token in the request header.
+
+
+
+
+## Bookmark a Content
+
+### HTTP Request
+
+`POST https://api.hashtag.be/api/v5/content/bookmarks`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | -------- | -----------
+user_id | yes | integer id
+content_id | yes | integer id
+
+### Access Rights
+
+This endpoint requires an API token in the request header.
+
+
+
+## Read the Bookmarks for a Content or a User
+
+### HTTP Request
+
+`GET https://api.hashtag.be/api/v5/content/bookmarks`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | -------- | -----------
+user_id | no | integer id
+content_id | no | integer id
+from | no | | 0
+nmemberships | no | | 18
+
+One of either user_id or content_id must be given. In the case of user_id, the bookmarked content_ids are returned, in the case of content_id, the user_ids are returned.
+
+### Access Rights
+
+This endpoint requires an API token in the request header.
+
+
+
+## Un-bookmark a Content
+
+### HTTP Request
+
+`DELETE https://api.hashtag.be/api/v5/content/bookmarks`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | -------- | -----------
+user_id | yes | integer id
+content_id | yes | integer id
 
 ### Access Rights
 
