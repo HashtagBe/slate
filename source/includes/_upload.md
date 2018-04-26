@@ -12,9 +12,8 @@
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
-upload_type_name | yes | one of |
+upload_type_name | yes | one of network_banner, network_logo, user_image, image, link, video, file |
 data | no | base 64 encoded data | 
-
 link_url | no | |
 title | no | |
 body | no | |
