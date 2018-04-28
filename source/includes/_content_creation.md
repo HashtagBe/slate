@@ -126,7 +126,7 @@ This endpoint requires an API token in the request header.
 
 ### HTTP Request
 
-`POST https://api.hashtag.be/api/v5/content/extract`
+`GET https://api.hashtag.be/api/v5/content/extract`
 
 ### Query Parameters
 
