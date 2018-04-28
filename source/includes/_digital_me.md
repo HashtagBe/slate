@@ -80,13 +80,9 @@ This endpoint requires an API token in the request header.
 
 ### HTTP Request
 
-`POST https://api.hashtag.be/api/v5/digital_me/connect/strava`
-
-`POST https://api.hashtag.be/api/v5/digital_me/connect/fitbit`
-
-`POST https://api.hashtag.be/api/v5/digital_me/connect/under_armour`
-
 `POST https://api.hashtag.be/api/v5/digital_me/connect/garmin`
+
+There is an example of connecting to Garmin given in the public folder (oauth.html). Connections for the other services are the same as in the old code.
 
 ### Parameters
 
@@ -100,20 +96,20 @@ This endpoint requires an API token in the request header.
 
 
 
+
 ## Fetching data from Strava, Fitbit, and Under Armour
 
 ### HTTP Request
 
-`POST https://api.hashtag.be/api/v5/digital_me/fetch/strava`
-
-`POST https://api.hashtag.be/api/v5/digital_me/fetch/fitbit`
-
-`POST https://api.hashtag.be/api/v5/digital_me/fetch/under_armour`
+`POST https://api.hashtag.be/api/v5/digital_me/fetch`
 
 ### Parameters
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
+user_id | yes | |
+
+Note that Garmin is a push system, and data does not need to be covered here
 
 ### Access Rights
 
