@@ -34,6 +34,7 @@
 Parameter | Required 
 --------- | -------- 
 content_id | yes
+user_id | yes 
 
 ### Access Rights
 
@@ -73,6 +74,7 @@ This endpoint requires an API token in the request header.
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
+user_id | yes | |
 from | no | | 0
 ncontent | no | | 18
 q | no | keyword query | no keyword search
@@ -174,6 +176,7 @@ These return the rewards by state for the current user.
 
 Parameter | Required | Default
 --------- | -------- | -----------
+user_id | yes |
 network_id | no | all networks
 from | no | 0
 nrewards | no | 18
