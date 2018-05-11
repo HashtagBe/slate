@@ -81,7 +81,7 @@ q | no | keyword query | no keyword search
 widget_type_ids | no | comma separated widget type ids filter | no filter
 widget_ids | no | comma separated widget ids filter | no filter
 creator_ids | no | comma separated user (creator) ids filter | no filter
-only | no | any comma separated combination of saved, viewed, declined, claimed, message, as_network, not_saved, not_viewed, not_declined, not_claimed, non_message, not_as_network | no filter
+only | no | any comma separated combination of saved, viewed, declined, claimed, to_me | no filter
 has | no | any comma separated combination of comments, link, image, file, video | no filter
 sources | no | any comma separated combination of manual, syndicated, shared | no filter
 
@@ -169,8 +169,6 @@ These return the rewards by state for the current user.
 `GET https://api.hashtag.be/api/v5/content/rewards/claimed`
 
 `GET https://api.hashtag.be/api/v5/content/rewards/claimable`
-
-`GET https://api.hashtag.be/api/v5/content/rewards/challenges`
 
 ### Query Parameters
 

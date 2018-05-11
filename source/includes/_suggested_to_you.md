@@ -7,6 +7,8 @@ The approve and reject endpoints return the next suggestion, thus the get_next e
 
 ## Get Next Suggestion
 
+Responses contain the json of either a content or an interest. The fields will be identical to those returned from the network interests and content endpoints.
+
 > Request for the next suggestion succeeded
 
 ```json
