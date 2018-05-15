@@ -20,7 +20,6 @@ title | yes | |
 timeliness | no | day, week, month, evergreen | evergreen 
 content_type_name | no | | content type name
 source | no | | targeted by interest
-
 | | |
 body | no | |
 url | no | |
