@@ -13,9 +13,13 @@ Parameter | Required | Description | Default
 network_id | yes | integer id |
 content_id | yes | integer id |
 sharer_id | yes | integer id of creator of this connector |
-targeting_type | no | to_network, as_network, to_members, by_role | to_network
-targeted_user_ids[] | no |
-
+approver_id | no | integer id |
+targeting_type | no | to_members, by_role, to_magazine | to_magazine
+attributation | no | as_me, as_network | as_me
+connection_reason | no | shared, syndicated | shared
+targeted_roles | no | user, reader, trusted_contributor, network_manager
+targeted_user_ids | no | array of user ids
+state | no | suggested, approved, hidden, rejected, deleted  | suggested
 
 ### Access Rights
 

@@ -18,25 +18,30 @@ description | no | |
 logo_id | no | |
 banner_id | no | |
 background_id | no | |
+hot_links_ids | no | |
+hot_links_icon | no | |
 rgb_hex_color | no | rgb hexadecimal colour | 000000
-website | no | |
-facebook | no | |
-linkedin | no | |
-twitter | no | |
 access_type | no | open or closed | open
-hidden | no | true or false | false
+hidden | no | true or false | false | false
 can_share_widgets | no | true or false | false
 can_target_by_role | no | true or false | true
 can_target_by_user | no | true or false | true
 personalize_network_banner | no | true or false | false
-default_role | no | reader, user, contributor, network_manager | user
+credits_enabled | no | true or false | true
+send_emails | no | true or false | false
+hide_facebook_login | no | true or false | false
+show_starred_content_section | no | true or false | true
+enable_hot_links_widget | no | true or false | false
+hot_button_primary | no | string | ""
+hot_button_secondary | no | string | ""
+modal_link_as_priority | no | true or false | true
+includes_running | no | true or false | false
+includes_cycling | no | true or false | false
+default_membership_role | no | reader, user, contributor, network_manager | user
 digest_scheduling_type | no | daily, weekly, monthly | weekly
 digest_day | no | 0-6, sunday to saturday | 1
 digest_hour | no | 0-23 | 0
 
-<aside class="warning">
-Need to add in magazine settings and widget types to example
-</aside>
 
 ### Access Rights
 
@@ -73,30 +78,7 @@ This endpoint requires an API token in the request header, and is only accessibl
 
 ### Parameters
 
-Parameter | Required | Description 
---------- | -------- | ----------- 
-network_id | yes | 
-name | no | 
-full_name | no | 
-description | no |  
-logo_id | no | 
-banner_id | no | 
-background_id | no | 
-rgb_hex_color | no | rgb hexadecimal colour 
-website | no | 
-facebook | no | 
-linkedin | no | 
-twitter | no | 
-access_type | no | open or closed 
-hidden | no | true or false 
-can_share_widgets | no | true or false 
-can_target_by_role | no | true or false 
-can_target_by_user | no | true or false 
-personalize_network_banner | no | true or false 
-default_role | no | reader, user, contributor, network_manager 
-digest_scheduling_type | no | daily, weekly, monthly 
-digest_day | no | monday, tuesday, wednesday, thursday, friday, saturday, sunday 
-digest_hour | no | 0-23 
+See GET parameter list
 
 ### Access Rights
 
@@ -122,21 +104,3 @@ network_id   | yes      | integer network id
 This endpoint requires an API token in the request header, and is only accessible to users who are members of the network with role manager.
 
 
-
-
-
-## [Not completed] Network Analytics
-
-### HTTP Request
-
-`GET https://api.hashtag.be/api/v5/networks/analytics`
-
-### Parameters
-
-Parameter | Required | Description
---------- | -------- | -----------
-network_id   | yes   | integer network id
-
-### Access Rights
-
-This endpoint requires an API token in the request header, and is only accessible to users who are members of the network with role manager.

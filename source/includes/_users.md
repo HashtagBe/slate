@@ -18,6 +18,7 @@ last_name | yes | |
 country | no | numeric iso country code |
 gender | no | unknown, male, female, or other | unknown
 birthday | no | 13 digit ms unix timestamp
+want_be_emails | no | boolean | true
 avatar_id | no | integer id of an image upload
 
 ### Access Rights

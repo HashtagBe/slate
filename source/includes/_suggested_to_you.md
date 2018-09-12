@@ -46,6 +46,10 @@ Responses contain the json of either a content or an interest. The fields will b
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
+network_id | yes | |
+user_id    | yes | |
+
+
 
 ### Access Rights
 
@@ -97,7 +101,11 @@ This endpoint requires an API token in the request header.
 
 Parameter | Required | Description
 --------- | -------- | -----------
-suggestion_id | yes | id of suggestion being judeged
+suggestion_id | yes | id of suggestion being judged
+network_id | yes |
+user_id | yes |
+type | yes | Content and NetworkInterest |
+only | no | network_interests, content or all, default is all
 
 ### Access Rights
 

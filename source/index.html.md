@@ -2,7 +2,7 @@
 title: #be API Reference
 
 toc_footers:
-  - Log in to the <a href='/admin'>#be admin dashboard</a>.
+  - Log in to the <a href='/dashboard'>#be data management dashboard</a>.
   - Contact us <a href='mail:support@hashtag.be'>here</a> for more information.
 
 includes:
@@ -12,11 +12,15 @@ includes:
   - content_coupons
   - content_retrieval
   - content_network_connector
+  - comments
   - digital_me
   - magazine
-  - memberships
   - networks
+  - memberships
+  - network_membership_invitations
   - network_interests
+  - network_hot_links
+  - network_analytics
   - notifications
   - suggested_to_you
   - upload

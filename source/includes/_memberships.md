@@ -10,11 +10,14 @@
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
-network_id | yes | integer network id |
-user_id | yes | integer user id |
+network_id | no | integer network id |
+user_id | no | integer user id |
+unsubscribe_hash | no | if the user id is not given, this is required
+network_name | no | if the network id is not given, this is required
 role | no | reader, user, trusted_contributor, or network_manager | user
 professional_level | no | unknown, starter, professional, master | unknown
 want_digest | no | true or false | true
+want_non_digest_emails | no | true or false | true
 
 ### Access Rights
 
@@ -121,31 +124,25 @@ This endpoint requires an API token in the request header. The endpoint is only 
 
 
 
-## [Not completed] Invite a User by Email to Join a Network
-
-> Membership invitation created
-
-```json
-{
-  "status": "success"
-}
-```
+## Hide Network Interests for a Membership
 
 ### HTTP Request
 
-`POST https://api.hashtag.be/api/v5/networks/memberships/invite`
+`PUT https://api.hashtag.be/api/v5/networks/memberships/hide_network_interests`
 
 ### Parameters
 
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
-network_id | yes | integer network id |
-user_id | yes | integer user id |
-role | no | reader, user, trusted_contributor, or network_manager | user
-professional_level | no | unknown, starter, professional, master | unknown
-want_digest | no | true or false | true
+membership_id | yes | integer id |
+user_id | yes | integer id | 
+network_interest_id | yes | integer network interest id |
+hide | yes | true or false | true
+
 
 ### Access Rights
 
-This endpoint requires an API token in the request header. The endpoint is only accessible to users.
+This endpoint requires an API token in the request header. The endpoint is only accessible to the users who are members of the network with role manager.
+
+
 

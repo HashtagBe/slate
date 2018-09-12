@@ -65,6 +65,26 @@ This endpoint requires an API token in the request header.
 
 
 
+## Read Content without Login
+
+### HTTP Request
+
+`GET https://api.hashtag.be/api/v5/content/public`
+
+### Parameters
+
+Parameter | Required | Description
+--------- | -------- | -----------
+content_id | yes | integer content id
+
+### Access Rights
+
+This endpoint is public.
+
+
+
+
+
 ## Update Content
 
 ### HTTP Request

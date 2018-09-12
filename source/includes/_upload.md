@@ -1,7 +1,6 @@
 # Uploads
 
-
-
+    
 ## Create an Upload
 
 ### HTTP Request
@@ -14,12 +13,13 @@ Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
 upload_type_name | yes | one of network_banner, network_logo, user_image, image, link, video, file |
 data | no | base 64 encoded data | 
+content_id | no | integer id |
 link_url | no | |
 title | no | |
 body | no | |
 image_url | no | |
 position | no | |
-is_cover_image | |
+is_cover_image | no | true or false | true
 
 ### Access Rights
 
@@ -56,15 +56,7 @@ This endpoint requires an API token in the request header.
 
 ### Parameters
 
-Parameter | Required | Description | Default
---------- | -------- | ----------- | -------
-upload_id | yes | |
-link_url | no | |
-title | no | |
-body | no | |
-image_url | no | |
-position | no | |
-is_cover_image | |
+See POST parameters.
 
 ### Access Rights
 

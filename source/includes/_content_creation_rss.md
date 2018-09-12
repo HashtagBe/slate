@@ -110,3 +110,21 @@ rss_feed_id | yes | integer rss feed id
 
 This endpoint requires an API token in the request header.
 
+
+
+## Confirm a URL returns valid RSS XML
+
+### HTTP Request
+
+`POST https://api.hashtag.be/api/v5/content/rss_feeds/check`
+
+### Parameters
+
+Parameter | Required | Description
+--------- | -------- | -----------
+url | yes | url 
+
+### Access Rights
+
+A public endpoint
+

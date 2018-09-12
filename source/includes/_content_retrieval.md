@@ -75,16 +75,56 @@ This endpoint requires an API token in the request header.
 Parameter | Required | Description | Default
 --------- | -------- | ----------- | -------
 user_id | yes | |
+network_id | yes | |
 from | no | | 0
 ncontent | no | | 18
 q | no | keyword query | no keyword search
-widget_type_ids | no | comma separated widget type ids filter | no filter
-widget_ids | no | comma separated widget ids filter | no filter
+content_type_ids | no | comma separated content type ids filter | no filter
+content_ids | no | comma separated widget ids filter | no filter
+excluded_content_ids | no | comma separated content ids to be excluded | no filter
 creator_ids | no | comma separated user (creator) ids filter | no filter
-only | no | any comma separated combination of saved, viewed, declined, claimed, to_me | no filter
-has | no | any comma separated combination of comments, link, image, file, video | no filter
+only | no | to_me, saved, viewed, claimed, declined, not_to_me, not_saved, not_viewed, not_claimed, not_declined or any comma separated combination which makes logical sense |
 sources | no | any comma separated combination of manual, syndicated, shared | no filter
+price_max | no | integer |
+states | no | any comma separated combination of suggested, approved, hidden, rejected, deleted |
+targeting_types | no | |
+event_start_date_later_than_now | no | |
+no_expired_content | no | |
+order | no | desc or asc | desc
+sort_by | no | digital_me, or field name | |
 
+### Access Rights
+
+This endpoint requires an API token in the request header.
+
+
+
+## Extract Core Content from URL
+
+> Response
+
+```json
+{
+  "status": "success",
+  "data": 
+  {
+    "extracted_fields": [
+      ... fields ...
+    ]
+  }
+}
+```
+
+### HTTP Request
+
+`GET https://api.hashtag.be/api/v5/content/extract`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | -------- | -----------
+url | yes | url-encoded url
+user_id | yes | integer id
 
 ### Access Rights
 
@@ -93,26 +133,23 @@ This endpoint requires an API token in the request header.
 
 
 
-## Comments
+## Content Targeted to a User
 
-> Response successful
+> Response
 
 ```json
 {
   "status": "success",
   "data": 
   {
-    "content_id": 3,
-    "comments": [
+    "content": [
       {
-        ... comment 0 fields ...
+        ... content fields ...
       },
       {
-        ... comment 1 fields ...
+        ... content fields ...
       },
       ...
-    ]
-  }
     ]
   }
 }
@@ -120,15 +157,14 @@ This endpoint requires an API token in the request header.
 
 ### HTTP Request
 
-`GET https://api.hashtag.be/api/v5/content/comments`
+`GET https://api.hashtag.be/api/v5/content/to_me`
 
 ### Query Parameters
 
-Parameter | Required | Default
---------- | -------- | -------
-content_id | yes |
-from      | no | 0
-ncomments | no | 18
+Parameter | Required | Description
+--------- | -------- | -----------
+network_id | no | integer id
+user_id | no | integer id
 
 ### Access Rights
 
@@ -163,6 +199,8 @@ This endpoint requires an API token in the request header.
 These return the rewards by state for the current user.
 
 ### HTTP Request
+
+`GET https://api.hashtag.be/api/v5/content/rewards`
 
 `GET https://api.hashtag.be/api/v5/content/rewards/available`
 

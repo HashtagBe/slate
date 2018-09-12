@@ -103,7 +103,7 @@ This is a public endpoint accessible to all. It does not require an API token in
 
 ### HTTP Request
 
-`PUT https://api.hashtag.be/api/v5/reset_password`
+`PUT https://api.hashtag.be/api/v5/login/reset_password`
 
 ### Parameters
 
@@ -114,4 +114,71 @@ new_password_confirmation | yes
 
 ### Access Rights
 
-This is only accessible to the user who is resetting their password. It requires an API token in the request header. Note this is not available to users who log in with Facebook or Medikey.
+This is only accessible to the user who is resetting their password. It requires an API token in the request header. Note this is not available to users who log in with Facebook, Campusparty or Medikey.
+
+
+
+
+## Send Forgot Password Email
+
+> Email sent
+
+```json
+{
+  "status": "success"
+}
+```
+
+### HTTP Request
+
+`POST https://api.hashtag.be/api/v5/login/send_forgot_password_email`
+
+### Parameters
+
+Parameter | Required 
+--------- | -------- 
+email | yes 
+network_id | yes
+new_password_confirmation | yes
+
+### Access Rights
+
+Note this is not available to users who log in with Facebook, Campusparty or Medikey.
+
+
+
+
+## Password Reset via Email
+
+> Password successfully reset
+
+```json
+{
+  "status": "success"
+}
+```
+
+### HTTP Request
+
+`PUT https://api.hashtag.be/api/v5/login/reset_password_via_email`
+
+### Parameters
+
+Parameter | Required | Description
+--------- | -------- | -----------
+new_password_hash | yes | this is the parameter given in the link provided to the user their email
+new_password | yes |
+new_password_confirmation | yes |
+
+### Access Rights
+
+Note this is not available to users who log in with Facebook, Campusparty or Medikey.
+
+
+
+
+
+post 'login/send_forgot_password_email', to: 'users#send_forgot_password_email'
+      post 'login/reset_password_via_email', to: 'user#reset_password_via_email'
+
+

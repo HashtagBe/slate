@@ -43,7 +43,7 @@ user_id | yes | integer user id
 action_type | yes | magazine_visit, click_interest, create_content, click_content, view_content, share_content, save_content
 network_id | no | integer
 content_id | no | integer
-interest_ids | no | comma separated integers
+interest_ids | no | array of integers
 
 ### Access Rights
 
