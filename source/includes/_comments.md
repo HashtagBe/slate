@@ -13,6 +13,7 @@ Parameter | Required | Description | Default
 content_id | yes | integer content id |
 user_id | yes | integer user id |
 comment | yes | string | 
+status | no | string | online, censored, or deleted |
 response_id | no | id of comment which this comment is responding to
 
 ### Access Rights
@@ -58,7 +59,8 @@ Parameter | Required | Description
 --------- | -------- | ----------- 
 comment_id | yes | 
 user_id | yes | 
-comment | yes |
+comment | no |
+status | no | see above for values
 
 ### Access Rights
 
